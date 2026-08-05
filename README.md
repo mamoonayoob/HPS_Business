@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HPS Logistics & Delivery Website
+
+Professional static portfolio website built from the [Figma design](https://www.figma.com/design/eqh3HSOKgO0vw3TIfig6bQ/HPS).
+
+## Stack
+
+- Next.js 16 (App Router)
+- React 19 + TypeScript
+- Tailwind CSS v4
+- Inter font (design kit)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and set your API endpoints:
 
-## Learn More
+| Variable | Purpose |
+|---|---|
+| `NEXT_PUBLIC_API_BASE_URL` | Base URL for all APIs |
+| `NEXT_PUBLIC_LOGIN_API` | Login endpoint |
+| `NEXT_PUBLIC_TRACKING_API` | Shipment tracking endpoint |
+| `NEXT_PUBLIC_TRACKING_API_MOCK` | `true` = dummy tracking data (default), `false` = real API |
+| `NEXT_PUBLIC_SHIPMENT_API` | Create shipment base path |
+| `NEXT_PUBLIC_SHIPMENT_API_MOCK` | `true` = dummy data (default), `false` = real API |
 
-To learn more about Next.js, take a look at the following resources:
+### Create Shipment — mock vs real API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+By default, Create Shipment uses **mock data** (`NEXT_PUBLIC_SHIPMENT_API_MOCK=true`). No backend is required for local development.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+When your backend is ready, set in `.env.local`:
 
-## Deploy on Vercel
+```env
+NEXT_PUBLIC_API_BASE_URL=https://your-api.com
+NEXT_PUBLIC_SHIPMENT_API=/shipments
+NEXT_PUBLIC_SHIPMENT_API_MOCK=false
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Expected real API endpoints (relative to `NEXT_PUBLIC_API_BASE_URL`):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Method | Path | Body |
+|---|---|---|
+| POST | `{SHIPMENT_API}/send-otp` | `{ email }` |
+| POST | `{SHIPMENT_API}/verify-otp` | `{ email, otp }` |
+| POST | `{SHIPMENT_API}/calculate` | `{ recipient, order }` |
+| POST | `{SHIPMENT_API}` | Full `ShipmentPayload` (sender, recipient, order, shipping) |
+
+Mock mode demo OTP: `123456` (or any 4+ digit code).
+
+## Phase 1 Pages
+
+- `/` — Home
+- `/login` — Login (API integrated)
+- `/track` — Track Shipment (API integrated)
+- `/shipment/create/step-1` … `step-4` — Create Shipment wizard (API integrated)
+- `/shipment/success` — Shipment created confirmation (AWB from API / mock)
+- `/services` — Services index + mega menu links
+- Shared Header (mega menu) + Footer on all pages
+
+## Design Tokens
+
+Colors and typography follow the HPS Design System & UI Kit:
+
+- Primary Navy `#1E3192`
+- Secondary Cyan `#39A6EF`
+- Action Red `#FF3B31`
+- Dark Text `#151B3D`
+- Muted Text `#5C6686`
+- Background Alt `#F4F7FB`
