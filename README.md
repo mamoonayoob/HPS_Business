@@ -65,7 +65,7 @@ This project uses **Next.js App Router**. Netlify needs the official Next.js plu
 3. Select the repo
 4. Netlify should auto-detect settings from `netlify.toml`:
    - **Build command:** `npm run build`
-   - **Publish directory:** leave empty (plugin handles it)
+   - **Publish directory:** `.next` (must not be repo root or `frontend/.next`)
 5. Add environment variables (Site settings → Environment variables) if needed:
    - `NEXT_PUBLIC_SHIPMENT_API_MOCK=true`
    - `NEXT_PUBLIC_TRACKING_API_MOCK=true`
@@ -86,8 +86,9 @@ Usually caused by wrong publish directory. In **Site configuration → Build & d
 
 | Setting | Correct value |
 |---------|---------------|
+| Base directory | **blank** (not `frontend`) |
 | Build command | `npm run build` |
-| Publish directory | **blank** (not `public`, not `.next`, not `out`) |
+| Publish directory | `.next` (not blank/repo root, not `frontend/.next`) |
 
 Ensure `@netlify/plugin-nextjs` is installed and `netlify.toml` is committed.
 

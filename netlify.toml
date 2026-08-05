@@ -1,11 +1,12 @@
 [build]
   command = "npm run build"
+  publish = ".next"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
   NPM_FLAGS = "--legacy-peer-deps"
 
-# Next.js App Router — do NOT set a manual "Publish directory" in Netlify UI.
-# This plugin handles routing, SSR, and static pages automatically.
+# Next.js App Router — publish must be ".next" (not repo root, not "frontend/.next").
+# The plugin then handles SSR, routing, and functions from that output.
 [[plugins]]
   package = "@netlify/plugin-nextjs"
