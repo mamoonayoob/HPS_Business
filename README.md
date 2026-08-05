@@ -54,6 +54,43 @@ Expected real API endpoints (relative to `NEXT_PUBLIC_API_BASE_URL`):
 
 Mock mode demo OTP: `123456` (or any 4+ digit code).
 
+## Deploy to Netlify
+
+This project uses **Next.js App Router**. Netlify needs the official Next.js plugin (already in `netlify.toml`).
+
+### Option A — Connect GitHub (recommended)
+
+1. Push this repo to GitHub
+2. [Netlify](https://app.netlify.com) → **Add new site** → **Import an existing project**
+3. Select the repo
+4. Netlify should auto-detect settings from `netlify.toml`:
+   - **Build command:** `npm run build`
+   - **Publish directory:** leave empty (plugin handles it)
+5. Add environment variables (Site settings → Environment variables) if needed:
+   - `NEXT_PUBLIC_SHIPMENT_API_MOCK=true`
+   - `NEXT_PUBLIC_TRACKING_API_MOCK=true`
+6. Deploy
+
+### Option B — Netlify CLI
+
+```bash
+npm install -g netlify-cli
+netlify login
+netlify init
+netlify deploy --prod
+```
+
+### Fix "Page not found" (404)
+
+Usually caused by wrong publish directory. In **Site configuration → Build & deploy → Build settings**:
+
+| Setting | Correct value |
+|---------|---------------|
+| Build command | `npm run build` |
+| Publish directory | **blank** (not `public`, not `.next`, not `out`) |
+
+Ensure `@netlify/plugin-nextjs` is installed and `netlify.toml` is committed.
+
 ## Phase 1 Pages
 
 - `/` — Home

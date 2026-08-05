@@ -1,0 +1,66 @@
+export const TRACK_SHIPMENT = {
+  searchTitle: "Track Shipment",
+  searchSubtitle: "Real-time GPS Monitoring",
+  awbLabel: "ENTER AWB NUMBER",
+  awbPlaceholder: "e.g. HPS-123456789",
+  locateButton: "Locate Package",
+  locating: "Locating...",
+  secureConnection: "Secure Connection",
+  systemOnline: "System Online",
+  awbNumberLabel: "AWB NUMBER",
+  expectedDeliveryLabel: "Expected Delivery:",
+  historyTitle: "Tracking History",
+  notFoundError: "Unable to track shipment. Please check your AWB number.",
+  emptyHint:
+    "Enter your AWB number above to view live shipment status and delivery timeline.",
+  progressLabel: "Shipment Progress",
+  eventsLabel: "updates",
+  copyAwb: "Copy AWB",
+  copied: "Copied!",
+  liveUpdates: "Live Updates",
+} as const;
+
+export const TRACKING_DUMMY = {
+  awbNumber: "HPS-847291054",
+  status: "ACTIVE SHIPMENT",
+  expectedDelivery: "28th Aug 2026",
+  events: [
+    {
+      status: "Delivered",
+      location: "To location Riyadh, SA",
+      date: "28th Aug 2026",
+      time: "Pending",
+      completed: false,
+      pending: true,
+    },
+    {
+      status: "Out For Delivery",
+      location: "at location Riyadh, SA",
+      date: "27th Aug 2026",
+      time: "11:30 AM",
+      completed: true,
+      current: true,
+    },
+    {
+      status: "In Transit",
+      location: "From Jeddah, SA To Riyadh, SA",
+      date: "25th Aug 2026",
+      time: "05:30 PM",
+      completed: true,
+    },
+    {
+      status: "Order Picked Up",
+      location: "From Riyadh, SA",
+      date: "24th Aug 2026",
+      time: "07:26 AM",
+      completed: true,
+    },
+    {
+      status: "Order Received",
+      location: "Shipment processed at Riyadh, SA",
+      date: "23rd Aug 2026",
+      time: "12:46 PM",
+      completed: true,
+    },
+  ],
+} as const;
