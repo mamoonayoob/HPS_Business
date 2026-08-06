@@ -23,7 +23,7 @@ export function ResourcesFaqSection() {
 
   return (
     <InnerPageSection bgClassName="bg-white" containerClassName="resources-section">
-      <div className="grid items-start gap-12 xl:grid-cols-[minmax(0,475px)_minmax(0,950px)] xl:gap-16">
+      <div className="grid items-start gap-8 md:gap-10 xl:grid-cols-[minmax(0,475px)_minmax(0,950px)] xl:gap-16">
         <aside className="min-w-0 xl:sticky xl:top-28 xl:self-start">
           <div className="flex items-center gap-3">
             <span className="h-0.5 w-8 shrink-0 bg-[var(--about-color-cyan)]" />

@@ -6,26 +6,26 @@ import { FormInput } from "@/components/ui/TextField";
 
 export function QuoteSection() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-12 md:py-16 lg:py-24">
       <Container>
         <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr]">
-          <div className="flex flex-col justify-center rounded-3xl border border-gray-100 bg-primary-navy p-10 lg:p-14">
-            <p className="text-base font-bold uppercase tracking-[0.1em] text-secondary-cyan">
+          <div className="flex flex-col justify-center rounded-3xl border border-gray-100 bg-primary-navy p-6 sm:p-8 lg:p-14">
+            <p className="text-sm sm:text-base font-bold uppercase tracking-[0.08em] text-secondary-cyan">
               Our Features
             </p>
-            <h2 className="mt-4 text-3xl font-black leading-tight text-white lg:text-4xl">
+            <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl font-black leading-tight text-white lg:text-4xl">
               TRUSTED LOGISTICS
               <br />
               COMPANY SINCE 2010
             </h2>
 
-            <ul className="mt-8 flex flex-col gap-8">
-              <li className="flex gap-5">
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/10">
-                  <Globe className="size-6 text-white" />
+            <ul className="mt-6 sm:mt-8 flex flex-col gap-6 sm:gap-8">
+              <li className="flex gap-4 sm:gap-5">
+                <div className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/10">
+                  <Globe className="size-5 sm:size-6 text-white" />
                 </div>
-                <div>
-                  <p className="text-xl font-black text-white">
+                <div className="min-w-0">
+                  <p className="text-base sm:text-lg lg:text-xl font-black text-white">
                     Worldwide Service
                   </p>
                   <p className="mt-1 text-sm text-white/70">
@@ -34,12 +34,12 @@ export function QuoteSection() {
                   </p>
                 </div>
               </li>
-              <li className="flex gap-5">
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/10">
-                  <Clock className="size-6 text-white" />
+              <li className="flex gap-4 sm:gap-5">
+                <div className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/10">
+                  <Clock className="size-5 sm:size-6 text-white" />
                 </div>
-                <div>
-                  <p className="text-xl font-black text-white">
+                <div className="min-w-0">
+                  <p className="text-base sm:text-lg lg:text-xl font-black text-white">
                     On Time Delivery
                   </p>
                   <p className="mt-1 text-sm text-white/70">
@@ -52,13 +52,13 @@ export function QuoteSection() {
           </div>
 
           <form
-            className="rounded-3xl border border-border-light bg-white p-10 shadow-sm lg:p-14"
+            className="rounded-3xl border border-border-light bg-white p-5 sm:p-8 lg:p-14 shadow-sm"
             onSubmit={(e) => e.preventDefault()}
           >
-            <p className="text-base font-bold uppercase tracking-[0.1em] text-action-red">
+            <p className="text-sm sm:text-base font-bold uppercase tracking-[0.08em] text-action-red">
               Get a Quote
             </p>
-            <h2 className="mt-2 text-[1.875rem] font-black leading-9 text-dark-text">
+            <h2 className="mt-2 text-xl sm:text-2xl lg:text-[1.875rem] font-black leading-tight sm:leading-9 text-dark-text">
               REQUEST A FREE QUOTE!
             </h2>
 
@@ -92,7 +92,7 @@ export function QuoteSection() {
               />
               <button
                 type="submit"
-                className="h-14 w-full rounded-lg bg-action-red text-lg font-black uppercase tracking-[0.1em] text-white shadow-md transition-colors hover:bg-[#e6352c]"
+                className="h-12 sm:h-14 w-full rounded-lg bg-action-red text-sm sm:text-base lg:text-lg font-black uppercase tracking-[0.08em] text-white shadow-md transition-colors hover:bg-[#e6352c]"
               >
                 Submit Request
               </button>

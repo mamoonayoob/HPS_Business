@@ -21,14 +21,11 @@ export function StatsSection() {
   return (
     <section className="home-section--stats">
       <Container>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6 lg:gap-6">
+        <div className="grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-6 lg:gap-6">
           {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="flex flex-col items-center rounded-2xl border border-primary-navy/10 bg-white p-6 text-center shadow-[0_10px_15px_rgba(46,49,147,0.05)]"
-            >
-              <div className="mb-4 flex size-14 items-center justify-center rounded-xl border border-gray-100 bg-white shadow-sm">
-                <stat.icon className="size-7 text-secondary-cyan" />
+            <div key={stat.label} className="home-stat-card">
+              <div className="home-stat-icon-wrap">
+                <stat.icon className="text-secondary-cyan" />
               </div>
               <p className="home-stat-value">{stat.value}</p>
               <p className="home-stat-label">{stat.label}</p>

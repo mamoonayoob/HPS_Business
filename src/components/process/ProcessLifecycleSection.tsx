@@ -24,7 +24,7 @@ export function ProcessLifecycleSection() {
 
   return (
     <InnerPageSection bgClassName="bg-white" containerClassName="process-section">
-      <div className="grid gap-12 xl:grid-cols-[minmax(0,831px)_minmax(0,593px)] xl:gap-16">
+      <div className="grid gap-8 md:gap-10 xl:grid-cols-[minmax(0,831px)_minmax(0,593px)] xl:gap-16">
         <div className="min-w-0">
           <p className="process-label text-[var(--about-color-cyan)]">{label}</p>
           <h2 className="process-heading mt-2 text-[var(--about-color-text)]">

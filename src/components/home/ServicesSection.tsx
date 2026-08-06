@@ -28,7 +28,7 @@ export function ServicesSection() {
   return (
     <section className="home-section home-section--alt">
       <Container>
-        <div className="mx-auto mb-14 max-w-3xl text-center">
+        <div className="mx-auto mb-10 sm:mb-14 max-w-3xl text-center">
           <span className="home-section-badge-pill">Our Services</span>
           <h2 className="home-section-heading mt-4">
             EXPLORE OUR SECURE

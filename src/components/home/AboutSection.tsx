@@ -6,7 +6,7 @@ export function AboutSection() {
   return (
     <section className="home-section">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="relative">
             <div className="overflow-hidden rounded-2xl border border-gray-100 p-2 shadow-lg">
               <Image
@@ -14,12 +14,12 @@ export function AboutSection() {
                 alt="Logistics operations at port"
                 width={720}
                 height={450}
-                className="h-[400px] w-full rounded-xl object-cover lg:h-[450px]"
+                className="h-[280px] w-full rounded-xl object-cover sm:h-[360px] lg:h-[450px]"
               />
             </div>
-            <div className="absolute -bottom-4 right-4 flex items-center gap-4 rounded-xl border border-gray-100 bg-white px-6 py-5 shadow-xl">
-              <span className="text-5xl font-black text-action-red">15</span>
-              <span className="text-sm font-bold uppercase leading-tight tracking-wide text-dark-text">
+            <div className="home-experience-badge">
+              <span className="home-experience-number">15</span>
+              <span className="home-experience-text">
                 Years of
                 <br />
                 Experience

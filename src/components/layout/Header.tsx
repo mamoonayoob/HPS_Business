@@ -22,8 +22,23 @@ function isNavActive(pathname: string, href: string) {
 export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const isCreateShipmentActive = pathname.startsWith("/shipment/create");
+
+  function toggleMobileMenu() {
+    setMobileOpen((open) => {
+      if (open) {
+        setMobileServicesOpen(false);
+      }
+      return !open;
+    });
+  }
+
+  function closeMobileMenu() {
+    setMobileOpen(false);
+    setMobileServicesOpen(false);
+  }
 
   return (
     <header
@@ -130,8 +145,9 @@ export function Header() {
         <button
           type="button"
           className="site-header-menu-btn"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          onClick={toggleMobileMenu}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
@@ -152,40 +168,77 @@ export function Header() {
         <div className="site-header-mobile border-t border-gray-100 bg-white py-4 xl:hidden">
           <Container>
             <nav className="flex flex-col gap-2">
-              {MAIN_NAV.map((item) => (
-                <div key={item.label}>
+              {MAIN_NAV.map((item) => {
+                const isActive = isNavActive(pathname, item.href);
+
+                if (item.megaMenu) {
+                  return (
+                    <div key={item.label}>
+                      <button
+                        type="button"
+                        className={cn(
+                          "site-nav-link flex w-full items-center justify-between py-2 text-left transition-colors",
+                          isActive || mobileServicesOpen
+                            ? "text-[var(--nav-link-active)]"
+                            : "text-[var(--nav-link-color)]",
+                        )}
+                        onClick={() => setMobileServicesOpen((open) => !open)}
+                        aria-expanded={mobileServicesOpen}
+                      >
+                        {item.label}
+                        <ChevronDown
+                          className={cn(
+                            "size-4 shrink-0 transition-transform",
+                            mobileServicesOpen && "rotate-180",
+                          )}
+                          strokeWidth={2.5}
+                        />
+                      </button>
+                      {mobileServicesOpen && (
+                        <div className="ml-4 mt-1 flex flex-col gap-1.5 border-l-2 border-[var(--nav-link-active)] pl-4">
+                          <Link
+                            href={item.href}
+                            className="text-[13px] leading-[19.5px] font-bold text-[var(--nav-link-active)] hover:opacity-80"
+                            onClick={closeMobileMenu}
+                          >
+                            All Services
+                          </Link>
+                          {SERVICES.map((service) => (
+                            <Link
+                              key={service.slug}
+                              href={service.href}
+                              className="text-[13px] leading-[19.5px] text-muted-text hover:text-[var(--nav-link-active)]"
+                              onClick={closeMobileMenu}
+                            >
+                              {service.title}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
+                return (
                   <Link
+                    key={item.label}
                     href={item.href}
                     className={cn(
                       "site-nav-link block py-2",
-                      isNavActive(pathname, item.href)
+                      isActive
                         ? "text-[var(--nav-link-active)]"
                         : "text-[var(--nav-link-color)]",
                     )}
-                    onClick={() => !item.megaMenu && setMobileOpen(false)}
+                    onClick={closeMobileMenu}
                   >
                     {item.label}
                   </Link>
-                  {item.megaMenu && (
-                    <div className="ml-4 mt-1 flex flex-col gap-1.5 border-l-2 border-[var(--nav-link-active)] pl-4">
-                      {SERVICES.map((service) => (
-                        <Link
-                          key={service.slug}
-                          href={service.href}
-                          className="text-[13px] leading-[19.5px] text-muted-text hover:text-[var(--nav-link-active)]"
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          {service.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+                );
+              })}
               <Link
                 href="/login"
                 className="site-header-action block py-2 text-[var(--nav-link-color)]"
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
               >
                 Login
               </Link>
@@ -196,14 +249,14 @@ export function Header() {
                     "site-header-cta site-header-cta--navy text-center",
                     isCreateShipmentActive && "site-header-cta--navy-active",
                   )}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={closeMobileMenu}
                 >
                   Create Shipment
                 </Link>
                 <Link
                   href="/contact"
                   className="site-header-cta site-header-cta--quote text-center"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={closeMobileMenu}
                 >
                   Get Quote
                 </Link>
