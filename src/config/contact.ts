@@ -32,3 +32,15 @@ export const CONTACT_MAP = {
   embedUrl:
     "https://maps.google.com/maps?q=Jeddah,+Saudi+Arabia&t=&z=11&ie=UTF8&iwloc=&output=embed",
 };
+
+/** WhatsApp click-to-chat — digits only for wa.me */
+export const WHATSAPP_SUPPORT = {
+  phone: "+966 9200 14641",
+  waNumber: "966920014641",
+  defaultMessage:
+    "Hello HPS Support, I would like assistance with my shipment or inquiry.",
+  get href() {
+    const text = encodeURIComponent(this.defaultMessage);
+    return `https://wa.me/${this.waNumber}?text=${text}`;
+  },
+};

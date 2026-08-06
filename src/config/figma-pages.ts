@@ -1,6 +1,5 @@
 /**
  * Figma file eqh3HSOKgO0vw3TIfig6bQ — page → frame node IDs for parity QA.
- * Regenerate screenshots via scripts/download-*-images.mjs with FIGMA_ACCESS_TOKEN.
  */
 export const FIGMA_FILE_KEY = "eqh3HSOKgO0vw3TIfig6bQ";
 
