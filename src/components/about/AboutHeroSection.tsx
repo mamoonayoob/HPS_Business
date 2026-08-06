@@ -1,41 +1,45 @@
 import Image from "next/image";
+import { Building2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+
+const ABOUT_HERO = {
+  badge: "Discover HPS",
+  titleLead: "ABOUT OUR",
+  titleAccent: "COMPANY",
+  subtitle:
+    "Delivering excellence, speed, and reliability. We represent our clients in the best possible way to ensure credibility in every delivery promise.",
+  image: "/images/about-logistics.png",
+};
 
 export function AboutHeroSection() {
   return (
-    <section className="relative overflow-hidden border-b border-border-light bg-background-alt">
-      <div
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-        aria-hidden
-      >
-        <Image
-          src="/images/about/about-hero-bg.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="scale-110 object-cover object-right opacity-10 blur-[2px]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f4f7fb] from-30% via-white/90 via-55% to-transparent" />
-      </div>
+    <section className="service-hero relative h-[450px] overflow-hidden">
+      <Image
+        src={ABOUT_HERO.image}
+        alt=""
+        fill
+        priority
+        unoptimized
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="service-hero-overlay" aria-hidden />
 
-      <Container className="about-section relative">
-        <div className="about-stack max-w-[672px]">
-          <span className="about-badge inline-block w-fit rounded border border-[rgba(0,174,239,0.2)] bg-[rgba(0,174,239,0.1)] px-3 py-1.5 text-[var(--about-color-cyan)]">
-            Discover HPS
+      <Container className="relative flex h-full flex-col items-center pt-20 text-center">
+        <div className="flex w-full max-w-[768px] flex-col items-center gap-4">
+          <span className="service-badge inline-flex items-center gap-2 rounded border border-[rgba(0,174,239,0.35)] bg-[rgba(0,174,239,0.12)] px-3 py-1.5 text-[var(--service-color-cyan)]">
+            <Building2 className="size-4 shrink-0" strokeWidth={2.5} />
+            {ABOUT_HERO.badge}
           </span>
 
-          <h1 className="about-hero-title">
-            ABOUT <span className="text-[var(--about-color-navy)]">OUR</span>
-            <br />
-            <span className="text-[var(--about-color-navy)]">COMPANY</span>
+          <h1 className="service-hero-title">
+            <span className="text-white">{ABOUT_HERO.titleLead} </span>
+            <span className="text-[var(--service-color-cyan)]">
+              {ABOUT_HERO.titleAccent}
+            </span>
           </h1>
 
-          <p className="about-hero-lead max-w-xl">
-            Delivering excellence, speed, and reliability. We represent our
-            clients in the best possible way to ensure credibility in every
-            delivery promise.
-          </p>
+          <p className="service-hero-lead max-w-[672px]">{ABOUT_HERO.subtitle}</p>
         </div>
       </Container>
     </section>

@@ -52,7 +52,7 @@ export function AboutProfileSection() {
             </p>
           </div>
 
-          <div className="flex gap-5 rounded-xl border-l-4 border-[var(--about-color-navy)] bg-[#f4f7fb] py-6 pl-7 pr-6">
+          <div className="flex gap-5 rounded-xl border-l-4 border-[var(--about-color-navy)] bg-[var(--background-alt)] py-6 pl-7 pr-6">
             <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
               <Quote className="size-5 text-[var(--about-color-cyan)]" strokeWidth={2} />
             </div>
@@ -67,36 +67,29 @@ export function AboutProfileSection() {
           </div>
         </div>
 
-        <div className="relative min-w-0 pr-0 pt-0 lg:pb-10 lg:pr-10 lg:pt-10">
-          <div
-            className="pointer-events-none absolute top-10 right-0 bottom-0 left-10 rounded-2xl border-2 border-[rgba(0,174,239,0.2)]"
-            aria-hidden
-          />
+        <div className="about-profile-visual">
+          <div className="about-profile-visual-accent" aria-hidden />
 
-          <div className="relative overflow-hidden rounded-2xl border-4 border-white p-1 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)]">
-            <div className="relative h-[360px] w-full sm:h-[480px] lg:h-[600px]">
+          <div className="about-profile-visual-frame">
+            <div className="about-profile-visual-media">
               <Image
                 src="/images/about/profile-delivery.png"
                 alt="HPS delivery professional loading packages"
                 fill
-                className="object-cover object-[center_20%]"
+                className="object-cover object-[center_22%]"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(26,28,75,0.8)] to-transparent" />
+              <div className="about-profile-visual-overlay" aria-hidden />
 
-              <div className="absolute bottom-8 left-8 right-8">
-                <div className="flex items-center gap-4 rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur-[6px]">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[var(--about-color-cyan)] p-3">
-                    <MapPin className="size-6 text-white" strokeWidth={2} />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="about-card-title text-white">
-                      Extensive Network
-                    </p>
-                    <p className="about-body-sm text-white/80">
-                      Managing precise tracking systems globally.
-                    </p>
-                  </div>
+              <div className="about-profile-visual-card">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[var(--about-color-cyan)] p-3">
+                  <MapPin className="size-6 text-white" strokeWidth={2} />
+                </div>
+                <div className="min-w-0">
+                  <p className="about-card-title text-white">Extensive Network</p>
+                  <p className="about-body-sm text-white/85">
+                    Managing precise tracking systems globally.
+                  </p>
                 </div>
               </div>
             </div>

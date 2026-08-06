@@ -19,7 +19,7 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="bg-background-alt py-16">
+    <section className="home-section--stats">
       <Container>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6 lg:gap-6">
           {stats.map((stat) => (
@@ -30,12 +30,8 @@ export function StatsSection() {
               <div className="mb-4 flex size-14 items-center justify-center rounded-xl border border-gray-100 bg-white shadow-sm">
                 <stat.icon className="size-7 text-secondary-cyan" />
               </div>
-              <p className="text-[1.875rem] font-black leading-none text-dark-text">
-                {stat.value}
-              </p>
-              <p className="mt-2 text-xs font-bold uppercase tracking-[0.1em] text-muted-text">
-                {stat.label}
-              </p>
+              <p className="home-stat-value">{stat.value}</p>
+              <p className="home-stat-label">{stat.label}</p>
             </div>
           ))}
         </div>

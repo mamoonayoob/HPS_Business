@@ -1,8 +1,7 @@
 export const PROCESS_HERO = {
   badge: "OPERATIONS & STANDARDS",
-  titleLead: "OUR",
-  titleAccent: "PROCESS",
-  titleTail: "& QUALITY",
+  titleLead: "OUR PROCESS &",
+  titleAccent: "QUALITY",
   subtitle:
     "Ensuring that best practices are followed in moving products securely from one place to another, maintaining total quality assurance.",
   image: "/images/process/process-hero.jpg",

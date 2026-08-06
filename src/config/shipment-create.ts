@@ -50,13 +50,32 @@ export const SHIPMENT_STEP2 = {
   deliverySection: "Delivery Contact Details",
   addressSection: "Complete Address Details",
   fields: {
-    contactPerson: "Contact Person",
-    email: "Email Address",
-    phoneNumber: "Phone Number",
-    alternatePhone: "Alternate Phone Number (Optional)",
-    addressLine: "Flat, Housing no., Building, Apartment, Area, street",
-    pinCode: "Pin Code",
-    city: "City",
+    contactPerson: {
+      label: "CONTACT PERSON",
+      placeholder: "Enter Contact Person Name",
+    },
+    email: {
+      label: "EMAIL ADDRESS",
+      placeholder: "Enter Email Address",
+    },
+    phoneNumber: {
+      label: "PHONE NUMBER",
+      placeholder: "Enter Phone Number",
+    },
+    alternatePhone: {
+      placeholder: "Alternate Phone Number (Optional)",
+    },
+    addressLine: {
+      label: "ADDRESS",
+      placeholder: "Flat, Housing no., Building, Apartment, Area, street",
+    },
+    pinCode: {
+      label: "PIN CODE",
+      placeholder: "Enter Pin Code",
+    },
+    city: {
+      label: "CITY",
+    },
   },
   submit: "Next",
 } as const;
@@ -64,14 +83,32 @@ export const SHIPMENT_STEP2 = {
 export const SHIPMENT_STEP3 = {
   cardTitle: "Package Details",
   fields: {
-    weight: "Package Weight in Kg",
+    weight: {
+      label: "PACKAGE WEIGHT IN KG",
+      placeholder: "Enter Package Weight in Kg",
+    },
     weightHint: "(Max. 3 digits after decimal place)",
-    packageValue: "Package Value",
-    content: "Write Package Content",
-    dimensions: "Dimensions",
-    length: "Length (in cm)",
-    breadth: "Breadth (in cm)",
-    height: "Height (in cm)",
+    packageValue: {
+      label: "PACKAGE VALUE",
+      placeholder: "Enter Package Value",
+    },
+    content: {
+      label: "PACKAGE CONTENT",
+      placeholder: "Write Package Content",
+    },
+    dimensions: "DIMENSIONS",
+    length: {
+      label: "LENGTH (IN CM)",
+      placeholder: "Length (in cm)",
+    },
+    breadth: {
+      label: "BREADTH (IN CM)",
+      placeholder: "Breadth (in cm)",
+    },
+    height: {
+      label: "HEIGHT (IN CM)",
+      placeholder: "Height (in cm)",
+    },
     dimensionsHint:
       "Shipping charges are calculated based on the higher value of package dimensions or weight.",
   },

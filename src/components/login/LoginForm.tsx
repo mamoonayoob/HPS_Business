@@ -42,11 +42,11 @@ export function LoginForm() {
   }
 
   return (
-    <Container className="relative flex min-h-[calc(100vh-200px)] items-center justify-center overflow-hidden py-16">
+    <Container className="login-page-wrap">
       <div className="pointer-events-none absolute -left-32 -top-32 size-[600px] rounded-full bg-primary-navy/30 blur-[50px]" />
       <div className="pointer-events-none absolute -right-32 top-1/4 size-[500px] rounded-full bg-secondary-cyan/30 blur-[50px]" />
 
-      <div className="relative w-full max-w-md rounded-3xl border border-gray-100 bg-white p-10 shadow-[0_20px_25px_rgba(46,49,147,0.1)]">
+      <div className="login-card">
         <div className="mb-8 flex flex-col items-center text-center">
           <Image
             src="/images/logo.png"
@@ -55,8 +55,8 @@ export function LoginForm() {
             height={71}
             className="mb-4 h-auto w-[100px]"
           />
-          <h1 className="text-3xl font-black text-dark-text">Welcome Back</h1>
-          <p className="mt-2 text-sm font-medium text-muted-text">
+          <h1 className="login-title">Welcome Back</h1>
+          <p className="login-subtitle">
             Please login to your account to continue.
           </p>
         </div>
@@ -125,7 +125,7 @@ export function LoginForm() {
           <button
             type="submit"
             disabled={loading}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-action-red py-4 text-sm font-black uppercase tracking-[0.1em] text-white shadow-[0_5px_7.5px_rgba(255,59,49,0.3)] transition-colors hover:bg-[#e6352c] disabled:opacity-60"
+            className="login-submit-btn"
           >
             {loading ? "Logging in..." : "Login to Account"}
             <ArrowRight className="size-4" />

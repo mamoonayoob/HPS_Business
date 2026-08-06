@@ -1,13 +1,14 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { ShipmentStepper } from "./ShipmentStepper";
 import { ShipmentCreateStep1 } from "./ShipmentCreateStep1";
 import { ShipmentCreateStep2 } from "./ShipmentCreateStep2";
 import { ShipmentCreateStep3 } from "./ShipmentCreateStep3";
 import { ShipmentCreateStep4 } from "./ShipmentCreateStep4";
+import { ShipmentCreateSkeleton } from "./ShipmentCreateSkeleton";
 import { SHIPMENT_STEP1, SHIPMENT_STEP4 } from "@/config/shipment-create";
 import {
   calculateShipping,
@@ -36,6 +37,7 @@ import {
   SHIPMENT_DUMMY_DATA,
   SHIPMENT_DUMMY_META,
 } from "@/lib/shipment/shipment-dummy-data";
+import { parseShipmentStep } from "@/lib/shipment/shipment-step";
 
 const initialData: ShipmentFormData = {
   step1: {
@@ -79,42 +81,54 @@ const initialMeta: ShipmentWizardMeta = {
   otpVerified: false,
 };
 
-export function ShipmentCreateWizard({ step }: { step: number }) {
+export function ShipmentCreateWizard() {
   const router = useRouter();
+  const pathname = usePathname();
+  const step = parseShipmentStep(pathname);
   const [formData, setFormData] = useState<ShipmentFormData>(initialData);
   const [meta, setMeta] = useState<ShipmentWizardMeta>(initialMeta);
-  const [hydrated, setHydrated] = useState(false);
+  const [ready, setReady] = useState(false);
   const [loading, setLoading] = useState(false);
   const [calculating, setCalculating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<
     Partial<Record<string, string>>
   >({});
+  const skipNextPersist = useRef(true);
 
   useEffect(() => {
     setFormData(readShipmentDraft(initialData));
     setMeta(readShipmentMeta(initialMeta));
-    setHydrated(true);
+    setReady(true);
   }, []);
 
   useEffect(() => {
-    if (!hydrated) {
+    if (!ready) {
       return;
     }
 
-    writeShipmentDraft(formData);
-  }, [formData, hydrated]);
+    if (skipNextPersist.current) {
+      skipNextPersist.current = false;
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      writeShipmentDraft(formData);
+    }, 120);
+
+    return () => window.clearTimeout(timer);
+  }, [formData, ready]);
 
   useEffect(() => {
-    if (!hydrated) {
+    if (!ready) {
       return;
     }
 
     writeShipmentMeta(meta);
-  }, [meta, hydrated]);
+  }, [meta, ready]);
 
   useEffect(() => {
-    if (!hydrated || step <= 1) {
+    if (!ready || step <= 1) {
       return;
     }
 
@@ -125,9 +139,9 @@ export function ShipmentCreateWizard({ step }: { step: number }) {
     );
 
     if (allowedStep !== step) {
-      router.replace(`/shipment/create/step-${allowedStep}`);
+      router.replace(`/shipment/create/step-${allowedStep}`, { scroll: false });
     }
-  }, [hydrated, step, formData, meta.otpVerified, router]);
+  }, [ready, step, formData, meta.otpVerified, router]);
 
   function updateStep<K extends keyof ShipmentFormData>(
     key: K,
@@ -274,12 +288,15 @@ export function ShipmentCreateWizard({ step }: { step: number }) {
 
     setError(null);
     setFieldErrors({});
-    router.push(`/shipment/create/step-${targetStep}`);
+    router.push(`/shipment/create/step-${targetStep}`, { scroll: false });
   }
 
   function handleLoadDemoData() {
     setFormData(SHIPMENT_DUMMY_DATA);
     setMeta(SHIPMENT_DUMMY_META);
+    writeShipmentDraft(SHIPMENT_DUMMY_DATA);
+    writeShipmentMeta(SHIPMENT_DUMMY_META);
+    skipNextPersist.current = true;
     setFieldErrors({});
     setError(null);
   }
@@ -305,14 +322,14 @@ export function ShipmentCreateWizard({ step }: { step: number }) {
     }));
 
     if (step < 4) {
-      router.push(`/shipment/create/step-${step + 1}`);
+      router.push(`/shipment/create/step-${step + 1}`, { scroll: false });
     } else {
       handleSubmit();
     }
   }
 
-  if (!hydrated) {
-    return null;
+  if (!ready) {
+    return <ShipmentCreateSkeleton />;
   }
 
   return (

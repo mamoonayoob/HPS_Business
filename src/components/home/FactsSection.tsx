@@ -3,22 +3,20 @@ import { Container } from "@/components/ui/Container";
 
 export function FactsSection() {
   return (
-    <section className="border-y border-border-light bg-white py-20">
+    <section className="home-section--facts">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
-              <span className="h-0.5 w-12 bg-action-red" />
-              <p className="text-base font-bold uppercase tracking-[0.1em] text-action-red">
-                Some Facts
-              </p>
+              <span className="home-section-label-line bg-action-red" />
+              <p className="home-section-label text-action-red">Some Facts</p>
             </div>
-            <h2 className="text-3xl font-black leading-tight text-dark-text sm:text-[3rem] sm:leading-[3rem]">
+            <h2 className="home-section-heading">
               #1 PLACE TO MANAGE
               <br />
               ALL SHIPMENTS
             </h2>
-            <p className="text-lg leading-7 text-muted-text">
+            <p className="home-section-lead">
               Effortlessly manage all your shipments with HPS Logistics &amp;
               Delivery. Streamline operations, track packages, and ensure
               reliable, on-time delivery.
@@ -28,9 +26,7 @@ export function FactsSection() {
                 <Phone className="size-8 text-white" />
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.1em] text-muted-text">
-                  Call for any query!
-                </p>
+                <p className="home-stat-label">Call for any query!</p>
                 <p className="text-2xl font-black text-primary-navy">
                   +966 9200 14641
                 </p>
@@ -68,13 +64,11 @@ export function FactsSection() {
                 },
               ].map((item) => (
                 <div key={item.title}>
-                  <p className="flex items-center gap-2 text-lg font-black text-dark-text">
+                  <p className="flex items-center gap-2 home-section-card-title">
                     <CheckCircle2 className="size-5 text-secondary-cyan" />
                     {item.title}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-text">
-                    {item.text}
-                  </p>
+                  <p className="mt-2 home-section-card-body">{item.text}</p>
                 </div>
               ))}
             </div>

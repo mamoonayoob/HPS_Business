@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
-import { ShipmentCreateWizard } from "@/components/shipment/ShipmentCreateWizard";
 
 type Props = {
   params: Promise<{ step: string }>;
 };
 
+/** Route segment validates step; UI is rendered by create/layout.tsx wizard. */
 export default async function ShipmentStepPage({ params }: Props) {
   const { step: stepParam } = await params;
   const match = stepParam.match(/^step-(\d)$/);
@@ -14,5 +14,5 @@ export default async function ShipmentStepPage({ params }: Props) {
     notFound();
   }
 
-  return <ShipmentCreateWizard step={step} />;
+  return null;
 }

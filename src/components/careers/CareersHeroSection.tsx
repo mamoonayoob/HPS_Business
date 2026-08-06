@@ -1,10 +1,11 @@
 import Image from "next/image";
+import { Briefcase } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { CAREERS_HERO } from "@/config/careers";
 
 export function CareersHeroSection() {
   return (
-    <section className="relative h-[361px] overflow-hidden border-b border-border-light">
+    <section className="service-hero relative h-[450px] overflow-hidden">
       <Image
         src={CAREERS_HERO.image}
         alt=""
@@ -12,31 +13,27 @@ export function CareersHeroSection() {
         priority
         unoptimized
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover"
       />
-      <div
-        className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/62 to-white/38"
-        aria-hidden
-      />
+      <div className="service-hero-overlay service-hero-overlay--soft" aria-hidden />
 
-      <Container className="relative flex h-full items-start pt-20">
-        <div className="max-w-[672px]">
-          <span className="careers-badge inline-block rounded border border-[rgba(255,62,65,0.25)] bg-[rgba(255,62,65,0.08)] px-3 py-1.5 text-[var(--about-color-red)]">
+      <Container className="relative flex h-full flex-col items-center pt-20 text-center">
+        <div className="flex w-full max-w-[768px] flex-col items-center gap-4">
+          <span className="service-badge inline-flex items-center gap-2 rounded border border-[rgba(0,174,239,0.35)] bg-[rgba(0,174,239,0.12)] px-3 py-1.5 text-[var(--service-color-cyan)]">
+            <Briefcase className="size-4 shrink-0" strokeWidth={2.5} />
             {CAREERS_HERO.badge}
           </span>
 
-          <h1 className="careers-hero-title mt-4">
-            <span className="text-[var(--about-color-navy)]">
-              {CAREERS_HERO.titleLead}{" "}
-            </span>
-            <span className="text-[var(--about-color-cyan)]">
+          <h1 className="service-hero-title">
+            <span className="text-white">{CAREERS_HERO.titleLead} </span>
+            <span className="text-[var(--service-color-cyan)]">
               {CAREERS_HERO.titleAccent}
             </span>
           </h1>
 
-          <div className="mt-6 border-l-4 border-[var(--about-color-cyan)] py-1 pl-5">
-            <p className="careers-hero-lead">{CAREERS_HERO.subtitle}</p>
-          </div>
+          <p className="service-hero-lead max-w-[672px]">
+            {CAREERS_HERO.subtitle}
+          </p>
         </div>
       </Container>
     </section>

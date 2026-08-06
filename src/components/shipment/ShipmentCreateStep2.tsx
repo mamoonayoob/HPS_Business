@@ -2,6 +2,7 @@
 
 import { ChevronDown } from "lucide-react";
 import {
+  ShipmentLabeledField,
   ShipmentPlaceholderInput,
 } from "./ShipmentFormFields";
 import { SHIPMENT_CITIES, SHIPMENT_STEP2 } from "@/config/shipment-create";
@@ -37,7 +38,8 @@ export function ShipmentCreateStep2({
           <div className="shipment-form-row shipment-form-row--3">
             <ShipmentPlaceholderInput
               id="recipientContactPerson"
-              placeholder={fields.contactPerson}
+              label={fields.contactPerson.label}
+              placeholder={fields.contactPerson.placeholder}
               value={data.contactPerson}
               onChange={(value) => onChange("contactPerson", value)}
               error={errors.contactPerson}
@@ -45,7 +47,8 @@ export function ShipmentCreateStep2({
             <ShipmentPlaceholderInput
               id="recipientEmail"
               type="email"
-              placeholder={fields.email}
+              label={fields.email.label}
+              placeholder={fields.email.placeholder}
               value={data.email}
               onChange={(value) => onChange("email", value)}
               error={errors.email}
@@ -53,7 +56,8 @@ export function ShipmentCreateStep2({
             <ShipmentPlaceholderInput
               id="recipientPhoneNumber"
               type="tel"
-              placeholder={fields.phoneNumber}
+              label={fields.phoneNumber.label}
+              placeholder={fields.phoneNumber.placeholder}
               value={data.phoneNumber}
               onChange={(value) => onChange("phoneNumber", value)}
               error={errors.phoneNumber}
@@ -64,7 +68,8 @@ export function ShipmentCreateStep2({
             <ShipmentPlaceholderInput
               id="recipientAlternatePhone"
               type="tel"
-              placeholder={fields.alternatePhone}
+              hideLabel
+              placeholder={fields.alternatePhone.placeholder}
               value={data.alternatePhone ?? ""}
               onChange={(value) => onChange("alternatePhone", value)}
             />
@@ -77,14 +82,16 @@ export function ShipmentCreateStep2({
           <div className="shipment-form-row shipment-form-row--address">
             <ShipmentPlaceholderInput
               id="addressLine"
-              placeholder={fields.addressLine}
+              label={fields.addressLine.label}
+              placeholder={fields.addressLine.placeholder}
               value={data.addressLine}
               onChange={(value) => onChange("addressLine", value)}
               error={errors.addressLine}
             />
             <ShipmentPlaceholderInput
               id="pinCode"
-              placeholder={fields.pinCode}
+              label={fields.pinCode.label}
+              placeholder={fields.pinCode.placeholder}
               value={data.pinCode}
               onChange={(value) => onChange("pinCode", value)}
               error={errors.pinCode}
@@ -92,10 +99,7 @@ export function ShipmentCreateStep2({
           </div>
 
           <div className="shipment-form-row shipment-form-row--single">
-            <div className="shipment-city-field">
-              <label htmlFor="city" className="shipment-city-label">
-                {fields.city}
-              </label>
+            <ShipmentLabeledField label={fields.city.label} error={errors.city}>
               <div className="relative">
                 <select
                   id="city"
@@ -103,7 +107,7 @@ export function ShipmentCreateStep2({
                   onChange={(e) => onChange("city", e.target.value)}
                   aria-invalid={Boolean(errors.city)}
                   className={cn(
-                    "shipment-city-select",
+                    "shipment-input shipment-city-select",
                     errors.city && "shipment-input--error",
                   )}
                 >
@@ -118,10 +122,7 @@ export function ShipmentCreateStep2({
                   aria-hidden
                 />
               </div>
-              {errors.city && (
-                <p className="shipment-field-error">{errors.city}</p>
-              )}
-            </div>
+            </ShipmentLabeledField>
           </div>
         </section>
 

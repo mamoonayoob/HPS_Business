@@ -76,7 +76,7 @@ export function HeroSection() {
             <form onSubmit={handleTrack} className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
                 <label htmlFor="awb" className="home-hero-track-label">
-                  Enter AWB Number
+                  ENTER AWB NUMBER
                 </label>
                 <div className="relative">
                   <input

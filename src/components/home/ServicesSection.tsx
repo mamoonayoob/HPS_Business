@@ -26,18 +26,16 @@ const icons = [
 
 export function ServicesSection() {
   return (
-    <section className="bg-background-alt py-24">
+    <section className="home-section home-section--alt">
       <Container>
         <div className="mx-auto mb-14 max-w-3xl text-center">
-          <span className="inline-block rounded-full border border-primary-navy/20 bg-white px-4 py-1 text-base font-bold uppercase tracking-[0.1em] text-primary-navy shadow-sm">
-            Our Services
-          </span>
-          <h2 className="mt-4 text-3xl font-black text-dark-text sm:text-[3rem] sm:leading-tight">
+          <span className="home-section-badge-pill">Our Services</span>
+          <h2 className="home-section-heading mt-4">
             EXPLORE OUR SECURE
             <br />
             <span className="text-secondary-cyan">SERVICES</span>
           </h2>
-          <p className="mt-4 text-lg leading-7 text-muted-text">
+          <p className="home-section-lead mt-4">
             Comprehensive logistics solutions tailored to meet the demands of
             global trade and domestic movement.
           </p>
@@ -47,23 +45,15 @@ export function ServicesSection() {
           {HOME_SERVICES.map((service, i) => {
             const Icon = icons[i] ?? Ship;
             return (
-              <article
-                key={service.slug}
-                className="flex flex-col rounded-2xl rounded-tr-[3rem] border border-gray-100 bg-white p-8 shadow-[0_10px_30px_rgba(46,49,147,0.05)]"
-              >
+              <article key={service.slug} className="home-service-card">
                 <div className="mb-6 flex size-16 items-center justify-center rounded-xl border border-gray-100 bg-background-alt shadow-sm">
                   <Icon className="size-8 text-primary-navy" />
                 </div>
-                <h3 className="mb-3 text-xl font-black text-dark-text">
-                  {service.title}
-                </h3>
-                <p className="mb-6 flex-1 text-sm leading-[22px] text-muted-text">
+                <h3 className="home-section-card-title">{service.title}</h3>
+                <p className="mb-6 mt-3 flex-1 home-section-card-body">
                   {service.description}
                 </p>
-                <Link
-                  href={service.href}
-                  className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-secondary-cyan hover:text-primary-navy"
-                >
+                <Link href={service.href} className="home-service-link">
                   Read More
                   <ChevronRight className="size-4" />
                 </Link>

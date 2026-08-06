@@ -138,7 +138,10 @@ export function Header() {
       </Container>
 
       {servicesOpen && (
-        <div className="site-header-mega hidden border-t border-gray-100 bg-white py-4 shadow-[0_20px_50px_rgba(46,49,147,0.12)] xl:block">
+        <div
+          className="site-header-mega hidden border-t border-gray-100 bg-white py-4 shadow-[0_20px_50px_rgba(46,49,147,0.12)] xl:block"
+          onMouseEnter={() => setServicesOpen(true)}
+        >
           <Container>
             <MegaMenuPanel />
           </Container>

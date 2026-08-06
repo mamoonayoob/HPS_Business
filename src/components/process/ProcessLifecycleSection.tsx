@@ -57,7 +57,7 @@ export function ProcessLifecycleSection() {
                         <span className="inline-block rounded bg-[#eef7fd] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[var(--about-color-cyan)]">
                           {step.phase}
                         </span>
-                        <h3 className="mt-3 text-xl font-black text-[var(--about-color-text)]">
+                        <h3 className="about-card-title mt-3 text-[var(--about-color-text)]">
                           {step.title}
                         </h3>
                         <p className="process-body mt-3">{step.description}</p>

@@ -53,7 +53,7 @@ export function ResourcesFaqSection() {
                 <Headphones className="size-7 text-[var(--about-color-cyan)]" />
               </div>
 
-              <h3 className="mt-5 text-xl font-black text-white">
+              <h3 className="about-card-title mt-5 text-white">
                 {support.title}
               </h3>
               <p className="resources-support-copy mt-3">{support.description}</p>

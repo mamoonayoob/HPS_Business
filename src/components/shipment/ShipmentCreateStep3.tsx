@@ -31,7 +31,8 @@ export function ShipmentCreateStep3({
             <ShipmentPlaceholderInput
               id="packageWeight"
               type="number"
-              placeholder={fields.weight}
+              label={fields.weight.label}
+              placeholder={fields.weight.placeholder}
               value={data.weight}
               onChange={(value) => onChange("weight", value)}
               error={errors.weight}
@@ -42,7 +43,8 @@ export function ShipmentCreateStep3({
           <ShipmentPlaceholderInput
             id="packageValue"
             type="number"
-            placeholder={fields.packageValue}
+            label={fields.packageValue.label}
+            placeholder={fields.packageValue.placeholder}
             value={data.packageValue}
             onChange={(value) => onChange("packageValue", value)}
             error={errors.packageValue}
@@ -52,7 +54,8 @@ export function ShipmentCreateStep3({
         <div className="shipment-form-row shipment-form-row--half">
           <ShipmentPlaceholderInput
             id="packageContent"
-            placeholder={fields.content}
+            label={fields.content.label}
+            placeholder={fields.content.placeholder}
             value={data.content}
             onChange={(value) => onChange("content", value)}
             error={errors.content}
@@ -61,12 +64,13 @@ export function ShipmentCreateStep3({
 
         <div className="shipment-dimensions-block">
           <div className="shipment-dimensions-row">
-            <span className="shipment-dimensions-label">{fields.dimensions}</span>
+            <span className="shipment-field-label">{fields.dimensions}</span>
             <div className="shipment-dimensions-inputs">
               <ShipmentPlaceholderInput
                 id="packageLength"
                 type="number"
-                placeholder={fields.length}
+                label={fields.length.label}
+                placeholder={fields.length.placeholder}
                 value={data.length}
                 onChange={(value) => onChange("length", value)}
                 error={errors.length}
@@ -74,7 +78,8 @@ export function ShipmentCreateStep3({
               <ShipmentPlaceholderInput
                 id="packageBreadth"
                 type="number"
-                placeholder={fields.breadth}
+                label={fields.breadth.label}
+                placeholder={fields.breadth.placeholder}
                 value={data.breadth}
                 onChange={(value) => onChange("breadth", value)}
                 error={errors.breadth}
@@ -82,7 +87,8 @@ export function ShipmentCreateStep3({
               <ShipmentPlaceholderInput
                 id="packageHeight"
                 type="number"
-                placeholder={fields.height}
+                label={fields.height.label}
+                placeholder={fields.height.placeholder}
                 value={data.height}
                 onChange={(value) => onChange("height", value)}
                 error={errors.height}

@@ -12,7 +12,7 @@ export function ServiceHeroSection({ service }: Props) {
   const { lead, accent } = splitHeading(service.hero.title);
 
   return (
-    <section className="relative h-[450px] overflow-hidden">
+    <section className="service-hero relative h-[450px] overflow-hidden">
       <Image
         src={service.hero.image}
         alt=""
@@ -22,10 +22,7 @@ export function ServiceHeroSection({ service }: Props) {
         sizes="100vw"
         className="object-cover"
       />
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/85"
-        aria-hidden
-      />
+      <div className="service-hero-overlay" aria-hidden />
 
       <Container className="relative flex h-full flex-col items-center pt-20 text-center">
         <div className="flex w-full max-w-[768px] flex-col items-center gap-4">
