@@ -43,17 +43,18 @@ export function LoginForm() {
 
   return (
     <Container className="login-page-wrap">
-      <div className="pointer-events-none absolute -left-32 -top-32 size-[600px] rounded-full bg-primary-navy/30 blur-[50px]" />
-      <div className="pointer-events-none absolute -right-32 top-1/4 size-[500px] rounded-full bg-secondary-cyan/30 blur-[50px]" />
+      <div className="login-blur login-blur--navy" aria-hidden />
+      <div className="login-blur login-blur--cyan" aria-hidden />
 
       <div className="login-card">
-        <div className="mb-8 flex flex-col items-center text-center">
+        <div className="login-header">
           <Image
             src="/images/logo.png"
             alt="HPS"
             width={114}
             height={71}
-            className="mb-4 h-auto w-[100px]"
+            className="login-logo"
+            priority
           />
           <h1 className="login-title">Welcome Back</h1>
           <p className="login-subtitle">
@@ -61,7 +62,7 @@ export function LoginForm() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+        <form onSubmit={handleSubmit} className="login-form">
           <TextField
             id="login-email"
             label="Email Address"
@@ -98,28 +99,23 @@ export function LoginForm() {
             required
           />
 
-          <div className="flex items-center justify-between">
-            <label className="flex items-center gap-2 text-sm font-medium text-muted-text">
+          <div className="login-meta-row">
+            <label className="login-remember">
               <input
                 type="checkbox"
                 checked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
-                className="size-4 rounded border-gray-300"
+                className="login-remember-checkbox"
               />
               Remember me
             </label>
-            <Link
-              href="/contact"
-              className="text-sm font-bold text-secondary-cyan hover:underline"
-            >
+            <Link href="/contact" className="login-forgot-link">
               Forgot Password?
             </Link>
           </div>
 
           {error && (
-            <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-action-red">
-              {error}
-            </p>
+            <p className="login-error">{error}</p>
           )}
 
           <button
@@ -132,12 +128,9 @@ export function LoginForm() {
           </button>
         </form>
 
-        <p className="mt-6 border-t border-gray-100 pt-6 text-center text-sm text-muted-text">
+        <p className="login-footer-text">
           Don&apos;t have an account?{" "}
-          <Link
-            href="/contact"
-            className="font-black text-primary-navy hover:text-secondary-cyan"
-          >
+          <Link href="/contact" className="login-footer-link">
             Contact Support
           </Link>
         </p>
