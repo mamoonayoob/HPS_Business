@@ -38,7 +38,7 @@ export function CareersCultureSection() {
               return (
                 <article
                   key={perk.title}
-                  className="careers-perk-card rounded-2xl border border-[#e5e7eb] bg-white p-6"
+                  className="motion-card careers-perk-card rounded-2xl border border-[#e5e7eb] bg-white p-6"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <IconBox

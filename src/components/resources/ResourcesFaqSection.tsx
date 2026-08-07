@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { InnerPageSection } from "@/components/layout/InnerPageSection";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { RESOURCES_FAQ } from "@/config/resources";
 
 const FAQ_ICONS = [Package, MapPin, ShieldCheck, Building2];
@@ -97,7 +98,7 @@ export function ResourcesFaqSection() {
           </div>
         </aside>
 
-        <div className="flex min-w-0 flex-col gap-5">
+        <ScrollReveal stagger className="flex min-w-0 flex-col gap-3 sm:gap-5">
           {items.map((item, index) => {
             const Icon = FAQ_ICONS[index] ?? Package;
             const isOpen = openId === item.id;
@@ -105,52 +106,47 @@ export function ResourcesFaqSection() {
             return (
               <article
                 key={item.id}
-                className={`overflow-hidden rounded-2xl border bg-white transition-shadow ${isOpen
-                    ? "border-[#dbeafe] shadow-[0_8px_30px_rgba(46,49,147,0.1)]"
-                    : "border-[#e5e7eb] shadow-[0_4px_16px_rgba(46,49,147,0.05)]"
-                  }`}
+                className={`motion-card resources-faq-item ${isOpen ? "resources-faq-item--open" : ""}`}
               >
                 <button
                   type="button"
                   onClick={() => setOpenId(isOpen ? "" : item.id)}
-                  className="flex w-full items-center gap-5 p-6 text-left"
+                  className="resources-faq-trigger flex w-full items-start gap-2.5 p-3 text-left sm:items-center sm:gap-5 sm:p-6"
                   aria-expanded={isOpen}
                 >
                   <span
-                    className={`flex size-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${item.iconColor} shadow-[0_4px_12px_rgba(46,49,147,0.15)]`}
+                    className={`resources-faq-icon flex size-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br sm:size-14 sm:rounded-xl ${item.iconColor} shadow-[0_4px_12px_rgba(46,49,147,0.15)]`}
                   >
-                    <Icon className="size-7 text-white" strokeWidth={1.75} />
+                    <Icon className="size-4 text-white sm:size-7" strokeWidth={1.75} />
                   </span>
 
-                  <span className="min-w-0 flex-1 text-base font-black leading-snug text-[var(--about-color-text)] sm:text-lg">
+                  <span className="resources-faq-question min-w-0 flex-1 text-[13px] font-bold leading-snug text-[var(--about-color-text)] sm:text-base sm:font-black sm:leading-snug lg:text-lg">
                     {item.question}
                   </span>
 
                   <span
-                    className={`flex size-10 shrink-0 items-center justify-center rounded-full border transition-colors ${isOpen
+                    className={`resources-faq-toggle mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full border sm:mt-0 sm:size-10 ${isOpen
                         ? "border-[var(--about-color-cyan)] bg-[var(--about-color-cyan)] text-white"
                         : "border-[#e5e7eb] bg-[#f8fafc] text-[var(--about-color-muted)]"
                       }`}
                   >
                     {isOpen ? (
-                      <Minus className="size-5" strokeWidth={2.5} />
+                      <Minus className="size-4" strokeWidth={2.5} />
                     ) : (
-                      <ChevronDown className="size-5" strokeWidth={2.5} />
+                      <ChevronDown className="size-4" strokeWidth={2.5} />
                     )}
                   </span>
                 </button>
 
                 {isOpen ? (
-                  <div className="border-t border-[#eef2f7] px-6 pb-6 pt-4">
-                    <p className="resources-faq-answer pl-[4.75rem]">
-                      {item.answer}
-                    </p>
+                  <div className="resources-faq-panel border-t border-[#eef2f7] px-4 pb-4 pt-3 sm:px-6 sm:pb-6 sm:pt-4">
+                    <p className="resources-faq-answer">{item.answer}</p>
                   </div>
                 ) : null}
               </article>
             );
           })}
-        </div>
+        </ScrollReveal>
       </div>
     </InnerPageSection>
   );

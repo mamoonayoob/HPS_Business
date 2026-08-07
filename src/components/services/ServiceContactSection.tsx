@@ -30,7 +30,7 @@ function ContactCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex items-center gap-5 rounded-2xl border border-[#eef2f7] bg-white p-6 shadow-[0_8px_30px_rgba(46,49,147,0.08)]">
+    <div className="motion-card flex items-center gap-5 rounded-2xl border border-[#eef2f7] bg-white p-6 shadow-[0_8px_30px_rgba(46,49,147,0.08)]">
       <div
         className={`flex size-14 shrink-0 items-center justify-center rounded-xl ${iconClassName}`}
       >

@@ -31,39 +31,39 @@ export function ProcessLifecycleSection() {
             {heading}
           </h2>
 
-          <div className="relative mt-10">
+          <div className="relative mt-10 process-timeline">
             <div
-              className="absolute bottom-8 left-7 top-8 w-0.5 border-l-2 border-dashed border-[#cbd5e1]"
+              className="process-timeline-line absolute bottom-8 left-[1.375rem] top-8 w-0.5 border-l-2 border-dashed border-[#cbd5e1] sm:left-7"
               aria-hidden
             />
 
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-6 sm:gap-10">
               {steps.map((step, index) => {
                 const Icon = STEP_ICONS[index] ?? ShoppingCart;
                 return (
-                  <div key={step.phase} className="relative flex gap-6">
+                  <div key={step.phase} className="process-step relative flex gap-3 sm:gap-6">
                     <div
-                      className={`relative z-10 flex size-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${step.iconColor} shadow-[0_8px_20px_rgba(46,49,147,0.15)]`}
+                      className={`process-step-icon relative z-10 flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br sm:size-14 ${step.iconColor} shadow-[0_8px_20px_rgba(46,49,147,0.15)]`}
                     >
-                      <Icon className="size-7 text-white" strokeWidth={1.75} />
+                      <Icon className="size-6 text-white sm:size-7" strokeWidth={1.75} />
                     </div>
 
-                    <article className="relative min-w-0 flex-1 overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-[0_8px_30px_rgba(46,49,147,0.08)]">
+                    <article className="process-step-card motion-card relative min-w-0 flex-1 overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-[0_8px_30px_rgba(46,49,147,0.08)]">
                       <div
                         className={`absolute bottom-0 left-0 top-0 w-1.5 ${step.accentColor}`}
                         aria-hidden
                       />
-                      <div className="relative p-8 pr-24">
-                        <span className="inline-block rounded bg-[#eef7fd] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[var(--about-color-cyan)]">
+                      <div className="relative p-4 sm:p-8 sm:pr-24">
+                        <span className="inline-block rounded bg-[#eef7fd] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-[var(--about-color-cyan)] sm:px-4 sm:py-1.5">
                           {step.phase}
                         </span>
-                        <h3 className="about-card-title mt-3 text-[var(--about-color-text)]">
+                        <h3 className="about-card-title mt-2 text-[var(--about-color-text)] sm:mt-3">
                           {step.title}
                         </h3>
-                        <p className="process-body mt-3">{step.description}</p>
+                        <p className="process-body mt-2 sm:mt-3">{step.description}</p>
                       </div>
                       <Icon
-                        className="pointer-events-none absolute -bottom-4 -right-4 size-36 text-[#f4f7fb] opacity-80"
+                        className="pointer-events-none absolute -bottom-4 -right-4 hidden size-28 text-[#f4f7fb] opacity-80 sm:block sm:size-36"
                         strokeWidth={1}
                         aria-hidden
                       />

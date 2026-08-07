@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { IconBox, getIconVariant } from "@/components/ui/IconBox";
 import { HOME_SERVICES } from "@/config/services";
 import {
@@ -29,24 +30,26 @@ export function ServicesSection() {
   return (
     <section className="home-section home-section--alt">
       <Container>
-        <div className="mx-auto mb-10 sm:mb-14 max-w-3xl text-center">
-          <span className="home-section-badge-pill">Our Services</span>
-          <h2 className="home-section-heading mt-4">
-            EXPLORE OUR SECURE
-            <br />
-            <span className="text-secondary-cyan">SERVICES</span>
-          </h2>
-          <p className="home-section-lead mt-4">
-            Comprehensive logistics solutions tailored to meet the demands of
-            global trade and domestic movement.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="mx-auto mb-10 sm:mb-14 max-w-3xl text-center">
+            <span className="home-section-badge-pill">Our Services</span>
+            <h2 className="home-section-heading mt-4">
+              EXPLORE OUR SECURE
+              <br />
+              <span className="text-secondary-cyan">SERVICES</span>
+            </h2>
+            <p className="home-section-lead mt-4">
+              Comprehensive logistics solutions tailored to meet the demands of
+              global trade and domestic movement.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ScrollReveal stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {HOME_SERVICES.map((service, i) => {
             const Icon = icons[i] ?? Ship;
             return (
-              <article key={service.slug} className="home-service-card">
+              <article key={service.slug} className="motion-card home-service-card">
                 <IconBox
                   icon={Icon}
                   variant={getIconVariant(i)}
@@ -64,7 +67,7 @@ export function ServicesSection() {
               </article>
             );
           })}
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

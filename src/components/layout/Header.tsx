@@ -3,13 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { CREATE_SHIPMENT_HREF, MAIN_NAV } from "@/config/navigation";
 import { SERVICES } from "@/config/services";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
 import { MegaMenuPanel } from "./MegaMenu";
+
+const MEGA_CLOSE_DELAY_MS = 180;
 
 function isNavActive(pathname: string, href: string) {
   if (href === "/") {
@@ -24,7 +26,28 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isCreateShipmentActive = pathname.startsWith("/shipment/create");
+
+  function clearServicesCloseTimer() {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  }
+
+  function openServicesMenu() {
+    clearServicesCloseTimer();
+    setServicesOpen(true);
+  }
+
+  function scheduleServicesClose() {
+    clearServicesCloseTimer();
+    closeTimerRef.current = setTimeout(() => {
+      setServicesOpen(false);
+      closeTimerRef.current = null;
+    }, MEGA_CLOSE_DELAY_MS);
+  }
 
   function toggleMobileMenu() {
     setMobileOpen((open) => {
@@ -43,7 +66,7 @@ export function Header() {
   return (
     <header
       className="site-header"
-      onMouseLeave={() => setServicesOpen(false)}
+      onMouseLeave={scheduleServicesClose}
     >
       <Container className="site-header-bar">
         <Link href="/" className="site-header-logo">
@@ -66,7 +89,7 @@ export function Header() {
                 <div
                   key={item.label}
                   className="site-header-nav-item"
-                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseEnter={openServicesMenu}
                 >
                   <button
                     type="button"
@@ -81,8 +104,8 @@ export function Header() {
                     {item.label}
                     <ChevronDown
                       className={cn(
-                        "size-2.5 shrink-0 transition-transform",
-                        servicesOpen && "rotate-180",
+                        "site-header-services-chevron size-2.5 shrink-0",
+                        servicesOpen && "site-header-services-chevron--open",
                       )}
                       strokeWidth={2.5}
                     />
@@ -153,16 +176,18 @@ export function Header() {
         </button>
       </Container>
 
-      {servicesOpen && (
-        <div
-          className="site-header-mega hidden border-t border-gray-100 bg-[#f4f7fb] py-3 shadow-[0_12px_32px_rgba(46,49,147,0.08)] xl:block"
-          onMouseEnter={() => setServicesOpen(true)}
-        >
-          <Container>
-            <MegaMenuPanel />
-          </Container>
-        </div>
-      )}
+      <div
+        className={cn(
+          "site-header-mega hidden xl:block",
+          servicesOpen && "site-header-mega--open",
+        )}
+        aria-hidden={!servicesOpen}
+        onMouseEnter={openServicesMenu}
+      >
+        <Container>
+          <MegaMenuPanel />
+        </Container>
+      </div>
 
       {mobileOpen && (
         <div className="site-header-mobile border-t border-gray-100 bg-white py-4 xl:hidden">

@@ -116,7 +116,7 @@ export function ServiceFeaturesSection({ service }: Props) {
           return (
             <article
               key={feature.title}
-              className="relative overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white p-8 shadow-[0_1px_1px_rgba(46,49,147,0.05)]"
+              className="motion-card relative overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white p-8 shadow-[0_1px_1px_rgba(46,49,147,0.05)]"
             >
               <div
                 className="pointer-events-none absolute -right-8 -top-8 size-32 rounded-full bg-gradient-to-br from-[rgba(0,174,239,0.15)] to-transparent"

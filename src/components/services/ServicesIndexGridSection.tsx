@@ -50,7 +50,7 @@ function ServiceCard({ slug, index }: { slug: string; index: number }) {
     detail?.hero.subtitle ?? service.description;
 
   return (
-    <Link href={service.href} className="services-index-card group">
+    <Link href={service.href} className="motion-card services-index-card group">
       <div className="services-index-card-media">
         <Image
           src={image}

@@ -1,21 +1,22 @@
 import Image from "next/image";
 import { Globe, Clock } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { IconBox } from "@/components/ui/IconBox";
 
 export function AboutSection() {
   return (
     <section className="home-section">
       <Container>
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
-          <div className="relative">
-            <div className="overflow-hidden rounded-2xl border border-gray-100 p-2 shadow-lg">
+        <ScrollReveal className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+          <div className="home-about-visual-group motion-image-group relative">
+            <div className="home-about-visual motion-image-wrap">
               <Image
                 src="/images/about-logistics.png"
                 alt="Logistics operations at port"
                 width={720}
                 height={450}
-                className="h-[240px] w-full rounded-xl object-cover sm:h-[300px] lg:h-[360px]"
+                className="motion-image home-about-visual-img"
               />
             </div>
             <div className="home-experience-badge">
@@ -66,7 +67,7 @@ export function AboutSection() {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

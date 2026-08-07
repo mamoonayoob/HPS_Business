@@ -1,5 +1,6 @@
 import { Eye, Gem, Target } from "lucide-react";
 import { InnerPageSection } from "@/components/layout/InnerPageSection";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const identityCards = [
   {
@@ -40,11 +41,11 @@ export function AboutCoreIdentitySection() {
         </h2>
       </div>
 
-      <div className="about-core-grid">
+      <ScrollReveal stagger className="about-core-grid">
         {identityCards.map((card) => (
           <article
             key={card.title}
-            className={`about-core-card ${card.accentClass}`}
+            className={`motion-card motion-card--top-accent about-core-card ${card.accentClass}`}
           >
             <div className={`about-core-icon ${card.iconClass}`}>
               <card.icon className="size-8" strokeWidth={1.75} />
@@ -53,7 +54,7 @@ export function AboutCoreIdentitySection() {
             <p className="about-core-card-body">{card.text}</p>
           </article>
         ))}
-      </div>
+      </ScrollReveal>
     </InnerPageSection>
   );
 }

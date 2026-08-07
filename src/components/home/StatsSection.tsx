@@ -7,6 +7,7 @@ import {
   Plane,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const stats = [
   { icon: Package, value: "1M+", label: "Shipments/Day" },
@@ -21,9 +22,9 @@ export function StatsSection() {
   return (
     <section className="home-section--stats">
       <Container>
-        <div className="grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-6 lg:gap-6">
+        <ScrollReveal stagger className="grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-6 lg:gap-6">
           {stats.map((stat) => (
-            <div key={stat.label} className="home-stat-card">
+            <div key={stat.label} className="motion-card home-stat-card">
               <div className="home-stat-icon-wrap">
                 <stat.icon className="text-secondary-cyan" strokeWidth={2} />
               </div>
@@ -31,7 +32,7 @@ export function StatsSection() {
               <p className="home-stat-label">{stat.label}</p>
             </div>
           ))}
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

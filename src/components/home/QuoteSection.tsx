@@ -2,6 +2,7 @@
 
 import { Globe, Clock } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { FormInput } from "@/components/ui/TextField";
 import { IconBox } from "@/components/ui/IconBox";
 
@@ -9,7 +10,7 @@ export function QuoteSection() {
   return (
     <section className="home-section bg-white">
       <Container>
-        <div className="home-quote-grid">
+        <ScrollReveal className="home-quote-grid">
           <div className="home-quote-feature">
             <p className="home-section-label text-secondary-cyan">
               Our Features
@@ -90,7 +91,7 @@ export function QuoteSection() {
               </button>
             </div>
           </form>
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

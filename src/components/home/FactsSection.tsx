@@ -1,12 +1,13 @@
 import { Phone, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { IconBox } from "@/components/ui/IconBox";
 
 export function FactsSection() {
   return (
     <section className="home-section--facts">
       <Container>
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+        <ScrollReveal className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span className="home-section-label-line bg-action-red" />
@@ -70,7 +71,7 @@ export function FactsSection() {
               ))}
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

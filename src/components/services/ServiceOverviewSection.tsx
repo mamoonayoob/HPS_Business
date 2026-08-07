@@ -44,21 +44,21 @@ export function ServiceOverviewSection({ service }: Props) {
           </div>
         </div>
 
-        <div className="relative w-full min-w-0 pb-10">
-          <div className="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white p-4 shadow-[0_20px_50px_rgba(46,49,147,0.12)]">
-            <div className="relative aspect-[678/400] w-full overflow-hidden rounded-xl bg-[#eef2f7]">
+        <div className="service-overview-visual motion-image-group">
+          <div className="service-overview-image-shell motion-image-wrap">
+            <div className="service-overview-image-frame">
               <Image
                 src={overview.image}
                 alt={service.title}
                 fill
                 unoptimized
-                className="object-cover"
+                className="motion-image object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
 
-          <div className="absolute -bottom-1 left-4 flex max-w-[calc(100%-2rem)] items-center gap-4 rounded-xl bg-[#151b3d] px-5 py-5 shadow-[0_10px_30px_rgba(0,0,0,0.25)] sm:-left-4">
+          <div className="service-overview-stat motion-float-badge motion-float-badge--delay">
             <IconBox icon={Plane} variant="cyan" size="md" className="shrink-0" />
             <div className="min-w-0">
               <p className="text-2xl font-black leading-6 text-white">

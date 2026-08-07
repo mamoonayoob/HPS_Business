@@ -27,7 +27,7 @@ function ContactCard({
 }) {
   return (
     <div
-      className="flex items-center gap-6 rounded-2xl border border-[#eef2f7] bg-white px-[25px] shadow-[0_8px_30px_rgba(46,49,147,0.08)]"
+      className="motion-card flex items-center gap-6 rounded-2xl border border-[#eef2f7] bg-white px-[25px] shadow-[0_8px_30px_rgba(46,49,147,0.08)]"
       style={{ height: "var(--contact-card-height)" }}
     >
       <div
