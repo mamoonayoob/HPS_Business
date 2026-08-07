@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { IconBox } from "@/components/ui/IconBox";
 import { TRACK_SHIPMENT } from "@/config/track-shipment";
 import { trackShipment } from "@/lib/api/tracking";
 import type { TrackingEvent, TrackingResponse } from "@/lib/api/tracking";
@@ -234,9 +235,7 @@ export function TrackShipmentPage() {
           <span className="track-search-accent" aria-hidden />
 
           <div className="track-search-header">
-            <div className="track-search-icon-wrap">
-              <Package className="size-7 text-secondary-cyan" strokeWidth={1.75} />
-            </div>
+            <IconBox icon={Package} variant="soft" size="lg" />
             <div>
               <h1 className="track-search-title">{copy.searchTitle}</h1>
               <p className="track-search-subtitle">{copy.searchSubtitle}</p>

@@ -23,7 +23,7 @@ export function ResourcesFaqSection() {
 
   return (
     <InnerPageSection bgClassName="bg-white" containerClassName="resources-section">
-      <div className="grid items-start gap-8 md:gap-10 xl:grid-cols-[minmax(0,475px)_minmax(0,950px)] xl:gap-16">
+      <div className="grid items-start gap-8 md:gap-10 xl:grid-cols-[minmax(0,475px)_minmax(0,950px)] xl:gap-10">
         <aside className="min-w-0 xl:sticky xl:top-28 xl:self-start">
           <div className="flex items-center gap-3">
             <span className="h-0.5 w-8 shrink-0 bg-[var(--about-color-cyan)]" />
@@ -105,11 +105,10 @@ export function ResourcesFaqSection() {
             return (
               <article
                 key={item.id}
-                className={`overflow-hidden rounded-2xl border bg-white transition-shadow ${
-                  isOpen
+                className={`overflow-hidden rounded-2xl border bg-white transition-shadow ${isOpen
                     ? "border-[#dbeafe] shadow-[0_8px_30px_rgba(46,49,147,0.1)]"
                     : "border-[#e5e7eb] shadow-[0_4px_16px_rgba(46,49,147,0.05)]"
-                }`}
+                  }`}
               >
                 <button
                   type="button"
@@ -128,11 +127,10 @@ export function ResourcesFaqSection() {
                   </span>
 
                   <span
-                    className={`flex size-10 shrink-0 items-center justify-center rounded-full border transition-colors ${
-                      isOpen
+                    className={`flex size-10 shrink-0 items-center justify-center rounded-full border transition-colors ${isOpen
                         ? "border-[var(--about-color-cyan)] bg-[var(--about-color-cyan)] text-white"
                         : "border-[#e5e7eb] bg-[#f8fafc] text-[var(--about-color-muted)]"
-                    }`}
+                      }`}
                   >
                     {isOpen ? (
                       <Minus className="size-5" strokeWidth={2.5} />

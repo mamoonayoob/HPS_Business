@@ -155,7 +155,7 @@ export function Header() {
 
       {servicesOpen && (
         <div
-          className="site-header-mega hidden border-t border-gray-100 bg-white py-4 shadow-[0_20px_50px_rgba(46,49,147,0.12)] xl:block"
+          className="site-header-mega hidden border-t border-gray-100 bg-[#f4f7fb] py-3 shadow-[0_12px_32px_rgba(46,49,147,0.08)] xl:block"
           onMouseEnter={() => setServicesOpen(true)}
         >
           <Container>
@@ -198,7 +198,7 @@ export function Header() {
                         <div className="ml-4 mt-1 flex flex-col gap-1.5 border-l-2 border-[var(--nav-link-active)] pl-4">
                           <Link
                             href={item.href}
-                            className="text-[13px] leading-[19.5px] font-bold text-[var(--nav-link-active)] hover:opacity-80"
+                            className="text-[12px] leading-[18px] font-bold text-[var(--nav-link-active)] hover:opacity-80"
                             onClick={closeMobileMenu}
                           >
                             All Services
@@ -207,7 +207,7 @@ export function Header() {
                             <Link
                               key={service.slug}
                               href={service.href}
-                              className="text-[13px] leading-[19.5px] text-muted-text hover:text-[var(--nav-link-active)]"
+                              className="text-[12px] leading-[18px] text-muted-text hover:text-[var(--nav-link-active)]"
                               onClick={closeMobileMenu}
                             >
                               {service.title}

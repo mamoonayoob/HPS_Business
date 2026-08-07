@@ -3,7 +3,7 @@ import { PARTNERS } from "@/config/partners";
 
 function LogoTrack({ idPrefix }: { idPrefix: string }) {
   return (
-    <div className="flex shrink-0 items-center gap-16 pr-16">
+    <div className="flex shrink-0 items-center gap-12 pr-12">
       {PARTNERS.map((partner, index) => (
         <div
           key={`${idPrefix}-${partner.name}-${index}`}

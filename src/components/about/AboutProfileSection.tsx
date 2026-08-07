@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Quote, MapPin } from "lucide-react";
 import { InnerPageSection } from "@/components/layout/InnerPageSection";
+import { IconBox } from "@/components/ui/IconBox";
 
 export function AboutProfileSection() {
   return (
@@ -8,7 +9,7 @@ export function AboutProfileSection() {
       bgClassName="overflow-x-hidden bg-white"
       containerClassName="about-section"
     >
-      <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-[var(--about-column-gap)]">
+      <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-[var(--about-column-gap)]">
         <div className="about-stack min-w-0">
           <div className="flex items-center gap-3">
             <span className="h-0.5 w-12 shrink-0 bg-[var(--about-color-red)]" />
@@ -53,9 +54,7 @@ export function AboutProfileSection() {
           </div>
 
           <div className="flex gap-5 rounded-xl border-l-4 border-[var(--about-color-navy)] bg-[var(--background-alt)] py-6 pl-7 pr-6">
-            <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
-              <Quote className="size-5 text-[var(--about-color-cyan)]" strokeWidth={2} />
-            </div>
+            <IconBox icon={Quote} variant="soft" size="md" className="shrink-0" />
             <div className="min-w-0">
               <p className="about-quote">
                 &ldquo;Credibility in the delivery promises is our core
@@ -82,12 +81,12 @@ export function AboutProfileSection() {
               <div className="about-profile-visual-overlay" aria-hidden />
 
               <div className="about-profile-visual-card">
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[var(--about-color-cyan)] p-3">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[var(--about-color-cyan)]">
                   <MapPin className="size-6 text-white" strokeWidth={2} />
                 </div>
                 <div className="min-w-0">
-                  <p className="about-card-title text-white">Extensive Network</p>
-                  <p className="about-body-sm text-white/85">
+                  <p className="about-card-title">Extensive Network</p>
+                  <p className="about-body-sm mt-1">
                     Managing precise tracking systems globally.
                   </p>
                 </div>

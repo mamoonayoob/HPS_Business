@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Plane } from "lucide-react";
 import { InnerPageSection } from "@/components/layout/InnerPageSection";
+import { IconBox } from "@/components/ui/IconBox";
 import type { ServiceDetail } from "@/config/service-details";
 import { splitHeading } from "@/lib/split-heading";
 
@@ -14,7 +15,7 @@ export function ServiceOverviewSection({ service }: Props) {
 
   return (
     <InnerPageSection bgClassName="bg-white" containerClassName="service-section">
-      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-10">
         <div className="service-stack min-w-0">
           <div className="flex items-center gap-3">
             <span className="h-0.5 w-12 shrink-0 bg-[var(--service-color-red)]" />
@@ -58,9 +59,7 @@ export function ServiceOverviewSection({ service }: Props) {
           </div>
 
           <div className="absolute -bottom-1 left-4 flex max-w-[calc(100%-2rem)] items-center gap-4 rounded-xl bg-[#151b3d] px-5 py-5 shadow-[0_10px_30px_rgba(0,0,0,0.25)] sm:-left-4">
-            <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[var(--service-color-cyan)]">
-              <Plane className="size-6 text-white" strokeWidth={2} />
-            </div>
+            <IconBox icon={Plane} variant="cyan" size="md" className="shrink-0" />
             <div className="min-w-0">
               <p className="text-2xl font-black leading-6 text-white">
                 {overview.stat.value}

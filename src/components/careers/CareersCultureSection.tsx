@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BarChart3, Medal, Users } from "lucide-react";
 import { InnerPageSection } from "@/components/layout/InnerPageSection";
+import { IconBox, getIconVariant } from "@/components/ui/IconBox";
 import { CAREERS_CULTURE } from "@/config/careers";
 
 const PERK_ICONS = [BarChart3, Users, Medal];
@@ -10,7 +11,7 @@ export function CareersCultureSection() {
 
   return (
     <InnerPageSection bgClassName="bg-white" containerClassName="careers-section">
-      <div className="grid items-stretch gap-12 xl:grid-cols-[minmax(0,831px)_467px] xl:gap-16">
+      <div className="grid items-stretch gap-8 xl:grid-cols-[minmax(0,831px)_467px] xl:gap-10">
         <div className="min-w-0">
           <div className="flex items-center gap-3">
             <span className="h-0.5 w-12 shrink-0 bg-[var(--about-color-navy)]" />
@@ -40,12 +41,11 @@ export function CareersCultureSection() {
                   className="careers-perk-card rounded-2xl border border-[#e5e7eb] bg-white p-6"
                 >
                   <div className="flex items-start justify-between gap-3">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-[#e5e7eb] bg-[#f8fafc]">
-                      <Icon
-                        className="size-5 text-[var(--about-color-navy)]"
-                        strokeWidth={1.75}
-                      />
-                    </div>
+                    <IconBox
+                      icon={Icon}
+                      variant={getIconVariant(index)}
+                      size="md"
+                    />
                     <span className="text-sm font-bold text-[#cbd5e1]">
                       {perk.number}
                     </span>

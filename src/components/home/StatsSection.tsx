@@ -25,7 +25,7 @@ export function StatsSection() {
           {stats.map((stat) => (
             <div key={stat.label} className="home-stat-card">
               <div className="home-stat-icon-wrap">
-                <stat.icon className="text-secondary-cyan" />
+                <stat.icon className="text-secondary-cyan" strokeWidth={2} />
               </div>
               <p className="home-stat-value">{stat.value}</p>
               <p className="home-stat-label">{stat.label}</p>

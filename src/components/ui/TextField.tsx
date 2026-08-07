@@ -96,16 +96,15 @@ export function FormInput({
   as = "input",
   options,
 }: FormInputProps) {
-  const baseClass =
-    "w-full border border-[#e5e7eb] bg-[#f8fafc] px-5 text-[15px] font-medium text-dark-text placeholder:text-[#9ca3af] outline-none focus:border-secondary-cyan rounded-lg";
+  const baseClass = "form-input";
 
   if (as === "textarea") {
     return (
       <textarea
         id={id}
         placeholder={placeholder}
-        rows={4}
-        className={cn(baseClass, "min-h-[120px] resize-none py-4", className)}
+        rows={3}
+        className={cn("form-textarea", className)}
       />
     );
   }
@@ -115,7 +114,7 @@ export function FormInput({
       <select
         id={id}
         defaultValue=""
-        className={cn(baseClass, "h-11 appearance-none py-2", className)}
+        className={cn("form-select", className)}
       >
         <option value="" disabled>
           {placeholder}
@@ -134,7 +133,7 @@ export function FormInput({
       id={id}
       type={type}
       placeholder={placeholder}
-      className={cn(baseClass, "h-11 py-2", className)}
+      className={cn(baseClass, className)}
     />
   );
 }

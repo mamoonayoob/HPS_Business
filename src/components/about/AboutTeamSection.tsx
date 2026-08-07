@@ -28,7 +28,7 @@ export function AboutTeamSection() {
       </div>
 
       <Container className="about-section relative">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-[var(--about-column-gap)]">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-[var(--about-column-gap)]">
           <div className="grid grid-cols-2 gap-4">
             {teamCards.map((card) => (
               <div

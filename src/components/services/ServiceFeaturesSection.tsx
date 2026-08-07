@@ -18,6 +18,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { InnerPageSection } from "@/components/layout/InnerPageSection";
+import { IconBox, getIconVariant } from "@/components/ui/IconBox";
 import type { ServiceDetail } from "@/config/service-details";
 
 type Props = {
@@ -110,7 +111,7 @@ export function ServiceFeaturesSection({ service }: Props) {
       </div>
 
       <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-        {features.items.map((feature) => {
+        {features.items.map((feature, index) => {
           const Icon = getIcon(feature.title);
           return (
             <article
@@ -123,12 +124,12 @@ export function ServiceFeaturesSection({ service }: Props) {
               />
 
               <div className="relative">
-                <div className="mb-5 flex size-16 items-center justify-center rounded-xl bg-[#f4f7fb] shadow-[0_4px_12px_rgba(46,49,147,0.08)]">
-                  <Icon
-                    className="size-8 text-[var(--service-color-navy)]"
-                    strokeWidth={2}
-                  />
-                </div>
+                <IconBox
+                  icon={Icon}
+                  variant={getIconVariant(index)}
+                  size="xl"
+                  className="mb-5"
+                />
 
                 <h3 className="service-card-title mb-3 text-[var(--service-color-text)]">
                   {feature.title}

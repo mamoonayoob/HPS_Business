@@ -32,9 +32,9 @@ type SectionHeadingProps = {
 };
 
 const sizeClasses = {
-  hero: "text-[2.5rem] font-black leading-tight sm:text-[3rem] lg:text-[4.5rem]",
-  section: "text-3xl font-black sm:text-[3rem]",
-  card: "text-2xl font-black",
+  hero: "text-[1.75rem] font-black leading-tight sm:text-[2rem] lg:text-[2.75rem]",
+  section: "text-xl font-black sm:text-2xl lg:text-[1.75rem]",
+  card: "text-lg font-black sm:text-xl",
 };
 
 export function SectionHeading({

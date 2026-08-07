@@ -37,7 +37,7 @@ function ContactCard({
           height: "var(--contact-card-icon)",
         }}
       >
-        <Icon className="size-8 text-white" strokeWidth={1.75} />
+        <Icon className="icon-box__glyph" strokeWidth={1.75} />
       </div>
       <div className="min-w-0">
         <p className="contact-card-label">{label}</p>
@@ -111,7 +111,7 @@ export function ContactFormSection() {
             <ContactCard
               icon={Phone}
               label="PHONE"
-              iconClassName="bg-gradient-to-br from-[#39a6ef] to-[#00bcef]"
+              iconClassName="icon-box icon-box--lg icon-box--cyan"
             >
               <p className="contact-card-value">{phone}</p>
             </ContactCard>
@@ -119,7 +119,7 @@ export function ContactFormSection() {
             <ContactCard
               icon={MapPin}
               label="OFFICE"
-              iconClassName="bg-gradient-to-br from-[#ff6b65] to-[#ff3b31]"
+              iconClassName="icon-box icon-box--lg icon-box--red"
             >
               <p className="contact-card-value">{office}</p>
               <p className="contact-card-sub">{country}</p>
@@ -128,7 +128,7 @@ export function ContactFormSection() {
             <ContactCard
               icon={Mail}
               label="EMAIL"
-              iconClassName="bg-gradient-to-br from-[#1e3192] to-[#2a4bb5]"
+              iconClassName="icon-box icon-box--lg icon-box--navy"
             >
               <p className="contact-card-value">{email}</p>
             </ContactCard>

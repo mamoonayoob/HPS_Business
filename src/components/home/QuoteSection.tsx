@@ -3,46 +3,43 @@
 import { Globe, Clock } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FormInput } from "@/components/ui/TextField";
+import { IconBox } from "@/components/ui/IconBox";
 
 export function QuoteSection() {
   return (
-    <section className="bg-white py-12 md:py-16 lg:py-24">
+    <section className="home-section bg-white">
       <Container>
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr]">
-          <div className="flex flex-col justify-center rounded-3xl border border-gray-100 bg-primary-navy p-6 sm:p-8 lg:p-14">
-            <p className="text-sm sm:text-base font-bold uppercase tracking-[0.08em] text-secondary-cyan">
+        <div className="home-quote-grid">
+          <div className="home-quote-feature">
+            <p className="home-section-label text-secondary-cyan">
               Our Features
             </p>
-            <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl font-black leading-tight text-white lg:text-4xl">
+            <h2 className="home-section-heading home-section-heading--light mt-2">
               TRUSTED LOGISTICS
               <br />
               COMPANY SINCE 2010
             </h2>
 
-            <ul className="mt-6 sm:mt-8 flex flex-col gap-6 sm:gap-8">
-              <li className="flex gap-4 sm:gap-5">
-                <div className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/10">
-                  <Globe className="size-5 sm:size-6 text-white" />
-                </div>
+            <ul className="mt-5 flex flex-col gap-4">
+              <li className="flex gap-3">
+                <IconBox icon={Globe} variant="on-dark" size="md" />
                 <div className="min-w-0">
-                  <p className="text-base sm:text-lg lg:text-xl font-black text-white">
+                  <p className="text-sm font-black text-white">
                     Worldwide Service
                   </p>
-                  <p className="mt-1 text-sm text-white/70">
+                  <p className="mt-0.5 text-xs leading-relaxed text-white/70">
                     Seamless worldwide shipping services with reliability you
                     trust.
                   </p>
                 </div>
               </li>
-              <li className="flex gap-4 sm:gap-5">
-                <div className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/10">
-                  <Clock className="size-5 sm:size-6 text-white" />
-                </div>
+              <li className="flex gap-3">
+                <IconBox icon={Clock} variant="on-dark" size="md" />
                 <div className="min-w-0">
-                  <p className="text-base sm:text-lg lg:text-xl font-black text-white">
+                  <p className="text-sm font-black text-white">
                     On Time Delivery
                   </p>
-                  <p className="mt-1 text-sm text-white/70">
+                  <p className="mt-0.5 text-xs leading-relaxed text-white/70">
                     Count on us for fast, reliable, and on-time delivery every
                     time.
                   </p>
@@ -52,18 +49,16 @@ export function QuoteSection() {
           </div>
 
           <form
-            className="rounded-3xl border border-border-light bg-white p-5 sm:p-8 lg:p-14 shadow-sm"
+            className="home-quote-form"
             onSubmit={(e) => e.preventDefault()}
           >
-            <p className="text-sm sm:text-base font-bold uppercase tracking-[0.08em] text-action-red">
-              Get a Quote
-            </p>
-            <h2 className="mt-2 text-xl sm:text-2xl lg:text-[1.875rem] font-black leading-tight sm:leading-9 text-dark-text">
+            <p className="home-section-label text-action-red">Get a Quote</p>
+            <h2 className="home-section-heading mt-1.5">
               REQUEST A FREE QUOTE!
             </h2>
 
-            <div className="mt-6 flex flex-col gap-6">
-              <div className="grid gap-6 sm:grid-cols-2">
+            <div className="home-quote-form-fields">
+              <div className="home-quote-form-row">
                 <FormInput id="quote-name" placeholder="Your Name" />
                 <FormInput
                   id="quote-email"
@@ -71,7 +66,7 @@ export function QuoteSection() {
                   type="email"
                 />
               </div>
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="home-quote-form-row">
                 <FormInput id="quote-phone" placeholder="Phone Number" />
                 <FormInput
                   id="quote-freight"
@@ -90,10 +85,7 @@ export function QuoteSection() {
                 placeholder="Special Request / Message"
                 as="textarea"
               />
-              <button
-                type="submit"
-                className="h-12 sm:h-14 w-full rounded-lg bg-action-red text-sm sm:text-base lg:text-lg font-black uppercase tracking-[0.08em] text-white shadow-md transition-colors hover:bg-[#e6352c]"
-              >
+              <button type="submit" className="home-quote-submit">
                 Submit Request
               </button>
             </div>

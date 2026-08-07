@@ -73,8 +73,8 @@ export function HeroSection() {
               </div>
             </div>
 
-            <form onSubmit={handleTrack} className="flex flex-col gap-6">
-              <div className="flex flex-col gap-2">
+            <form onSubmit={handleTrack} className="flex flex-col gap-4">
+              <div className="flex flex-col gap-1.5">
                 <label htmlFor="awb" className="home-hero-track-label">
                   ENTER AWB NUMBER
                 </label>
@@ -85,13 +85,13 @@ export function HeroSection() {
                     placeholder="e.g. HPS-123456789"
                     value={awb}
                     onChange={(e) => setAwb(e.target.value)}
-                    className="home-hero-track-input pr-12"
+                    className="home-hero-track-input pr-10"
                   />
-                  <Search className="pointer-events-none absolute top-1/2 right-4 size-6 -translate-y-1/2 text-muted-text" />
+                  <Search className="pointer-events-none absolute top-1/2 right-3.5 size-4 -translate-y-1/2 text-muted-text" />
                 </div>
               </div>
               <button type="submit" className="home-hero-track-btn">
-                <Search className="size-5" />
+                <Search className="size-4" />
                 Locate Package
               </button>
             </form>

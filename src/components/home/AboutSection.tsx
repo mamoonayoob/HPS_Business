@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { Globe, Clock } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { IconBox } from "@/components/ui/IconBox";
 
 export function AboutSection() {
   return (
     <section className="home-section">
       <Container>
-        <div className="grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
           <div className="relative">
             <div className="overflow-hidden rounded-2xl border border-gray-100 p-2 shadow-lg">
               <Image
@@ -14,7 +15,7 @@ export function AboutSection() {
                 alt="Logistics operations at port"
                 width={720}
                 height={450}
-                className="h-[280px] w-full rounded-xl object-cover sm:h-[360px] lg:h-[450px]"
+                className="h-[240px] w-full rounded-xl object-cover sm:h-[300px] lg:h-[360px]"
               />
             </div>
             <div className="home-experience-badge">
@@ -50,18 +51,14 @@ export function AboutSection() {
 
             <div className="grid gap-8 pt-2 sm:grid-cols-2">
               <div>
-                <div className="mb-3 flex size-14 items-center justify-center rounded-lg border border-gray-100 bg-background-alt">
-                  <Globe className="size-7 text-secondary-cyan" />
-                </div>
+                <IconBox icon={Globe} variant="soft" size="lg" className="mb-3" />
                 <h3 className="home-section-card-title">Global Coverage</h3>
                 <p className="mt-2 home-section-card-body">
                   Worldwide network spanning 150+ hubs and 52 cargo airports.
                 </p>
               </div>
               <div>
-                <div className="mb-3 flex size-14 items-center justify-center rounded-lg border border-gray-100 bg-background-alt">
-                  <Clock className="size-7 text-secondary-cyan" />
-                </div>
+                <IconBox icon={Clock} variant="soft" size="lg" className="mb-3" />
                 <h3 className="home-section-card-title">On Time Delivery</h3>
                 <p className="mt-2 home-section-card-body">
                   GPS-enabled fleet ensuring reliable, on-time promises globally.

@@ -17,6 +17,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { InnerPageSection } from "@/components/layout/InnerPageSection";
+import { IconBox, getIconVariant } from "@/components/ui/IconBox";
 import {
   SERVICES_INDEX_CATEGORIES,
 } from "@/config/services-index";
@@ -38,7 +39,7 @@ const SERVICE_ICONS: Record<string, LucideIcon> = {
   "door-to-door-delivery": DoorOpen,
 };
 
-function ServiceCard({ slug }: { slug: string }) {
+function ServiceCard({ slug, index }: { slug: string; index: number }) {
   const service = SERVICES.find((item) => item.slug === slug);
   const detail = getServiceDetail(slug);
   if (!service) return null;
@@ -61,7 +62,7 @@ function ServiceCard({ slug }: { slug: string }) {
         />
         <div className="services-index-card-media-overlay" aria-hidden />
         <div className="services-index-card-icon">
-          <Icon className="size-6 text-primary-navy" strokeWidth={2} />
+          <IconBox icon={Icon} variant={getIconVariant(index)} size="md" />
         </div>
       </div>
 
@@ -78,6 +79,8 @@ function ServiceCard({ slug }: { slug: string }) {
 }
 
 export function ServicesIndexGridSection() {
+  let cardIndex = 0;
+
   return (
     <InnerPageSection
       id="services-catalog"
@@ -118,9 +121,11 @@ export function ServicesIndexGridSection() {
             </div>
 
             <div className="services-index-cards">
-              {category.slugs.map((slug) => (
-                <ServiceCard key={slug} slug={slug} />
-              ))}
+              {category.slugs.map((slug) => {
+                const index = cardIndex;
+                cardIndex += 1;
+                return <ServiceCard key={slug} slug={slug} index={index} />;
+              })}
             </div>
           </div>
         ))}

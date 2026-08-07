@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { IconBox, getIconVariant } from "@/components/ui/IconBox";
 import { HOME_SERVICES } from "@/config/services";
 import {
   Ship,
@@ -46,9 +47,12 @@ export function ServicesSection() {
             const Icon = icons[i] ?? Ship;
             return (
               <article key={service.slug} className="home-service-card">
-                <div className="mb-6 flex size-16 items-center justify-center rounded-xl border border-gray-100 bg-background-alt shadow-sm">
-                  <Icon className="size-8 text-primary-navy" />
-                </div>
+                <IconBox
+                  icon={Icon}
+                  variant={getIconVariant(i)}
+                  size="xl"
+                  className="mb-6"
+                />
                 <h3 className="home-section-card-title">{service.title}</h3>
                 <p className="mb-6 mt-3 flex-1 home-section-card-body">
                   {service.description}

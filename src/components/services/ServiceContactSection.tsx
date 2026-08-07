@@ -34,7 +34,7 @@ function ContactCard({
       <div
         className={`flex size-14 shrink-0 items-center justify-center rounded-xl ${iconClassName}`}
       >
-        <Icon className="size-7 text-white" strokeWidth={1.75} />
+        <Icon className="icon-box__glyph" strokeWidth={1.75} />
       </div>
       <div className="min-w-0">
         <p className="service-contact-label text-[var(--service-color-navy)]">
@@ -87,7 +87,7 @@ function InputWithIcon({
 export function ServiceContactSection(_props: Props) {
   return (
     <InnerPageSection bgClassName="bg-white" containerClassName="service-section">
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,520px)_minmax(0,1fr)] lg:items-start lg:gap-14 xl:grid-cols-[minmax(0,560px)_minmax(0,1fr)] xl:gap-16">
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,520px)_minmax(0,1fr)] lg:items-start lg:gap-10 xl:grid-cols-[minmax(0,560px)_minmax(0,1fr)]">
         <div className="min-w-0">
           <div className="flex items-center gap-3">
             <span className="h-0.5 w-10 shrink-0 bg-[var(--service-color-cyan)]" />
@@ -110,7 +110,7 @@ export function ServiceContactSection(_props: Props) {
             <ContactCard
               icon={Phone}
               label="PHONE"
-              iconClassName="bg-gradient-to-br from-[#39a6ef] to-[#00bcef]"
+              iconClassName="icon-box icon-box--lg icon-box--cyan"
             >
               <p className="service-contact-value">+966 9200 14641</p>
             </ContactCard>
@@ -118,7 +118,7 @@ export function ServiceContactSection(_props: Props) {
             <ContactCard
               icon={MapPin}
               label="OFFICE"
-              iconClassName="bg-gradient-to-br from-[#ff6b65] to-[#ff3b31]"
+              iconClassName="icon-box icon-box--lg icon-box--red"
             >
               <p className="service-contact-value">Jeddah-Riyadh</p>
               <p className="service-body-sm mt-0.5 text-[var(--service-color-muted)]">
@@ -129,7 +129,7 @@ export function ServiceContactSection(_props: Props) {
             <ContactCard
               icon={Mail}
               label="EMAIL"
-              iconClassName="bg-gradient-to-br from-[#1e3192] to-[#2a4bb5]"
+              iconClassName="icon-box icon-box--lg icon-box--navy"
             >
               <p className="service-contact-value">info@hps.com.sa</p>
             </ContactCard>
