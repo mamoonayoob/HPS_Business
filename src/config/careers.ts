@@ -12,7 +12,7 @@ export const CAREERS_CULTURE = {
   heading: "WORKING AT HPS",
   paragraphs: [
     "At HPS, we are a dynamic and fast-growing company in the Middle East, committed to offering exceptional career opportunities and a competitive remuneration package for ambitious individuals eager to make a meaningful impact. We believe that a progressive and supportive work environment inspires people to perform at their best, and our HR practices are designed to promote collaboration while recognizing individual excellence.",
-    "Our focus on career development ensures employees have access to regular training programs, seminars, and workshops, empowering them to stay ahead in their fields and achieve personal growth.",
+    "Our focus on career development ensures employees have access to regular training programs, seminars, and workshops,    them to stay ahead in their fields and achieve personal growth.",
     "Beyond professional development, we foster a strong sense of teamwork and camaraderie through engaging cultural activities that bring employees together and build lasting connections. At HPS, we don't just provide jobs; we cultivate an environment where talent thrives, ideas flourish, and every team member contributes to our shared success.",
   ],
   perks: [

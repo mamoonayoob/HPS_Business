@@ -93,48 +93,48 @@ export const HOME_SERVICES = [
     title: "Supply Chain",
     href: "/services/supply-chain",
     description:
-      "Optimize your supply chain with end-to-end visibility and control.",
+      "Optimize your operations with HPS Logistics' expert supply chain solutions.",
   },
   {
     slug: "transportation",
     title: "Transportation",
     href: "/services/transportation",
     description:
-      "Reliable road, air, and sea transportation across the region.",
+      "Reliable and efficient transportation services by HPS Logistics for all needs.",
   },
   {
     slug: "customs-compliance",
     title: "Customs & Compliance",
     href: "/services/customs-compliance",
     description:
-      "Expert customs clearance ensuring smooth cross-border movement.",
+      "Ensure smooth global trade with HPS Logistics' customs and compliance expertise.",
   },
   {
     slug: "warehousing-distribution",
     title: "Warehousing",
     href: "/services/warehousing-distribution",
     description:
-      "Secure storage and efficient distribution for your inventory.",
+      "Secure warehousing and efficient distribution services by HPS Logistics.",
   },
   {
     slug: "import-export-consolidation",
     title: "Import Consolidation",
     href: "/services/import-export-consolidation",
     description:
-      "Consolidated import and export services for cost efficiency.",
+      "Simplify global trade with HPS Logistics' import/export consolidation services.",
   },
   {
     slug: "packaging-packing",
     title: "Packaging",
     href: "/services/packaging-packing",
     description:
-      "Professional packaging solutions for safe goods transportation.",
+      "Ensure safe transit with HPS Logistics' expert packaging and packing solutions.",
   },
   {
     slug: "cash-on-delivery",
     title: "Cash on Delivery",
     href: "/services/cash-on-delivery",
     description:
-      "Secure COD collection and remittance for e-commerce businesses.",
+      "HPS Logistics offers reliable cash-on-delivery services for hassle-free transactions.",
   },
 ];

@@ -55,14 +55,14 @@ export function AboutSection() {
                 <IconBox icon={Globe} variant="soft" size="lg" className="mb-3" />
                 <h3 className="home-section-card-title">Global Coverage</h3>
                 <p className="mt-2 home-section-card-body">
-                  Worldwide network spanning 150+ hubs and 52 cargo airports.
+                  Reliable delivery solutions with skilled couriers worldwide.
                 </p>
               </div>
               <div>
                 <IconBox icon={Clock} variant="soft" size="lg" className="mb-3" />
                 <h3 className="home-section-card-title">On Time Delivery</h3>
                 <p className="mt-2 home-section-card-body">
-                  GPS-enabled fleet ensuring reliable, on-time promises globally.
+                  Ensured on-time delivery with our reliable logistics network.
                 </p>
               </div>
             </div>

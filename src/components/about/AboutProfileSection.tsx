@@ -30,27 +30,21 @@ export function AboutProfileSection() {
               <span className="about-body-bold">
                 High Performance Service Est. (HPS)
               </span>{" "}
-              provides delivery services to freight companies and provide the
-              best leading competencies in this field. We also have numbers and
-              groups of skilled and experience couriers in the same field, and
-              then they are appointed according to the required competencies and
-              quality in Representing the beneficiary company in the best way, in
-              order to satisty customer of our dealers and the credibility in
-              the delivery promises.
+              provides delivery services to freight companies and provide
+              the best leading competencies in this field. We also have numbers and groups of skilled and
+              experience couriers in the same field, and then they are appointed according to the required
+              competencies and quality in Representing the beneficiary company in the best way, in order to
+              satisty customer of our dealers and the credibility in the delivery promises.
             </p>
             <p className="about-body">
-              The Foundation also provides to all its customers the best
-              solution in raising the level of distribution in terms of quality
-              and speed, tracking them by the site, and managing them at any
-              time.
+              The Foundation also provides to all its customers the best solution in raising the level of distribution
+              in terms of quality and speed, tracking them by the site, and managing them at any time.
             </p>
             <p className="about-body">
-              The establishment has a group of distinguished memberships of car
-              rental companies and the possibility of providing them as soon as
-              needed in a manner that suits the type and amount of mail attached
-              to the supply from the various distribution channels and work on
-              the speed of completion in a manner that matches the goals of the
-              institution.
+              The establishment has a group of distinguished memberships of car rental companies and the
+              possibility of providing them as soon as needed in a manner that suits the type and amount of mail
+              attached to the supply from the various distribution channels and work on the speed of completion
+              in a manner that matches the goals of the institution.
             </p>
           </div>
 

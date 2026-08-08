@@ -88,29 +88,29 @@ const STATS: Record<string, { value: string; label: string }> = {
 
 const SUBTITLES: Record<string, string> = {
   "freight-forwarding":
-    "Streamline global shipping with expert freight forwarding — air, sea, and land solutions tailored to move your cargo across borders with confidence.",
+    "Seamless solutions ensuring your goods are transported efficiently across borders with precision, speed, and utmost care.",
   "supply-chain":
-    "Optimize your supply chain with end-to-end visibility, control, and customized logistics solutions built for modern business operations.",
+    "Streamlining operations from sourcing to delivery, ensuring efficiency, reliability, and optimal performance at every stage.",
   transportation:
-    "Reliable road, air, and sea transportation with GPS-enabled fleet tracking to deliver your goods safely across every terrain.",
+    "Connecting businesses to their destinations with speed and efficiency. We ensure your goods reach safely, no matter the distance or terrain.",
   "customs-compliance":
-    "Expert customs clearance and regulatory compliance services that keep your cross-border shipments moving without costly delays.",
+    "Navigating complex global trade regulations with ease. We handle the complexities of customs so you can focus entirely on your business growth.",
   "warehousing-distribution":
-    "Secure warehousing and efficient distribution networks designed to protect inventory and accelerate fulfillment.",
+    "State-of-the-art facilities and streamlined distribution networks to store, manage, and deliver your goods with precision and absolute security.",
   "packaging-packing":
-    "Professional packaging solutions using premium materials and proven techniques to safeguard goods in transit.",
+    "Professional packaging and packing services to ensure your goods are protected during transit using high-quality materials and expert care.",
   "import-export-consolidation":
-    "Consolidated import and export services that reduce freight costs while maintaining speed, safety, and reliability.",
+    "Simplifying global trade by combining multiple shipments into one. A cost-effective solution ensuring timely and efficient delivery worldwide.",
   "cash-on-delivery":
-    "Secure cash-on-delivery collection and remittance services that give your customers flexibility and your business control.",
+    "Providing your customers the flexibility to pay at their doorstep. Our secure system ensures smooth transactions and reliable settlements every time.",
   "domestic-movement":
-    "Nationwide domestic shipping and movement solutions with optimized routing and real-time shipment visibility.",
+    "Efficient domestic movement solutions ensuring timely deliveries across the country, providing a seamless experience for businesses and customers alike.",
   "secure-warehousing":
-    "High-security storage facilities with advanced monitoring systems to protect your most valuable inventory.",
+    "Ensuring the safety and integrity of your goods with advanced security systems, 24/7 surveillance, and controlled access.",
   "b2b-service":
-    "Tailored B2B logistics solutions that streamline operations, reduce costs, and strengthen supply chain collaboration.",
+    "Connecting businesses with efficient logistics solutions. We streamline operations, ensuring smooth supply chains and seamless collaboration.",
   "door-to-door-delivery":
-    "Complete door-to-door delivery across regions — pickup, transit, and drop-off handled seamlessly from start to finish.",
+    "Ensuring your goods are picked up and delivered seamlessly. We guarantee efficiency, speed, and reliability for every shipment.",
 };
 
 function featureHeading(title: string): string {

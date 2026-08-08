@@ -7,7 +7,7 @@ function LogoTrack({ idPrefix }: { idPrefix: string }) {
       {PARTNERS.map((partner, index) => (
         <div
           key={`${idPrefix}-${partner.name}-${index}`}
-          className="relative h-[41px] w-[180px] shrink-0 opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+          className="relative h-[41px] w-[180px] shrink-0 opacity-70 grayscale transition-all duration-700 hover:opacity-100 hover:grayscale-0"
         >
           <Image
             src={partner.logo}

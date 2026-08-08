@@ -52,28 +52,21 @@ export function AboutTeamSection() {
             </p>
             <h2 className="about-heading text-white">
               HIGHLY EXPERIENCED STAFF &amp; ADVANCED
-              <br />
               SOLUTIONS
             </h2>
             <p className="about-body-light">
-              Our organization boasts highly experienced staff, offering advanced
-              delivery solutions with efficiency and expertise. We cover cities
-              in the western area and can arrange the required number of
-              couriers. Our pre-planned strategies ensure efficient postal
-              distribution, effective team management, and seamless operations
-              under pressure. Prioritizing excellent customer service, we aim to
-              achieve complete customer satisfaction, our ultimate goal.
+              Our organization boasts highly experienced staff, offering advanced delivery solutions with efficiency and
+              expertise. We cover cities in the western area and can arrange the required number of couriers. Our pre-
+              planned strategies ensure efficient postal distribution, effective team management, and seamless operations
+              under pressure. Prioritizing excellent customer service, we aim to achieve complete customer satisfaction, our
+              ultimate goal.
             </p>
             <div className="rounded-r-lg border-l-4 border-[var(--about-color-cyan)] bg-white/5 py-6 pl-7 pr-6">
               <p className="about-body-light">
-                We aim to collaborate with leading companies in the digital
-                commerce and logistics sectors, such as{" "}
-                <strong className="font-bold text-white">NOON</strong>, to earn
-                your trust and dedicate our efforts to enhancing services. Our
-                focus is on improving quality, capacity, and preserving your
-                brand image within customer communities. By delivering exceptional
-                services, we strive to strengthen your market position and drive
-                sustainable growth.
+                We aim to collaborate with leading companies in the digital commerce and logistics sectors, such as{" "}
+                <strong className="font-bold text-white">NOON</strong>, to earn your trust and dedicate our efforts to enhancing services. Our focus is on improving
+                quality, capacity, and preserving your brand image within customer communities. By delivering
+                exceptional services, we strive to strengthen your market position and drive sustainable growth.
               </p>
             </div>
           </div>
